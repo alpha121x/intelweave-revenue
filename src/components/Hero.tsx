@@ -14,94 +14,134 @@ const Hero = () => {
       {/* Surgical red accent glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-surgical-red/10 blur-[120px] rounded-full" />
 
-      <div className="container relative z-10 mx-auto px-6 py-20">
+      <div className="container relative z-30 mx-auto px-6 py-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Overline */}
+          {/* Overline with enhanced animation */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-8 backdrop-blur-sm"
           >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <motion.span
+              className="w-2 h-2 rounded-full bg-primary"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
             <span className="text-sm font-medium text-steel">Forensic Market Intelligence</span>
           </motion.div>
 
-          {/* Main headline */}
+          {/* Main headline with staggered word animation */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
             className="text-5xl md:text-7xl font-bold mb-6 tracking-tight text-balance"
           >
-            Forensic Market Intelligence{" "}
-            <span className="text-primary">→</span>{" "}
-            <span className="bg-gradient-to-r from-foreground to-steel bg-clip-text text-transparent">
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
+              Forensic Market Intelligence{" "}
+            </motion.span>
+            <motion.span
+              className="text-primary"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.8, duration: 0.5, type: "spring", stiffness: 200 }}
+            >
+              →
+            </motion.span>{" "}
+            <motion.span
+              className="bg-gradient-to-r from-foreground to-steel bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
+            >
               Predictable Enterprise Pipeline
-            </span>
+            </motion.span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Subheadline with fade-in */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 1.2, duration: 0.7, ease: "easeOut" }}
             className="text-xl md:text-2xl text-steel mb-4 max-w-3xl mx-auto leading-relaxed text-balance"
           >
             We reverse-engineer your market, competitors, and highest-converting deal patterns to build automated outbound systems that deliver pre-qualified, high-intent conversations – consistently and scalably.
           </motion.p>
 
-          {/* Proof points */}
+          {/* Proof points with enhanced animation */}
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-muted-foreground mb-12 text-balance"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.4, duration: 0.5 }}
+            className="text-muted-foreground mb-12 text-balance font-medium"
           >
             No bought lists. No spray-and-pray. No hope marketing.
           </motion.p>
 
-          {/* CTA buttons */}
+          {/* CTA buttons with staggered animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 1.6, duration: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="surgical" size="xl" className="group">
-              Book a 15-Minute Intelligence Audit
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="intelligence" size="xl" className="group">
-              <LinkedinIcon className="mr-2" />
-              DM "INTEL" on LinkedIn
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button variant="surgical" size="xl" className="group shadow-lg hover:shadow-xl transition-shadow">
+                Book a 15-Minute Intelligence Audit
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button variant="intelligence" size="xl" className="group shadow-lg hover:shadow-xl transition-shadow">
+                <LinkedinIcon className="mr-2" />
+                DM "INTEL" on LinkedIn
+              </Button>
+            </motion.div>
           </motion.div>
 
-          {/* Trust indicators */}
+          {/* Trust indicators with staggered fade-in */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="mt-16 flex items-center justify-center gap-8 text-sm text-muted-foreground"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.8, duration: 0.6 }}
+            className="mt-16 flex flex-wrap items-center justify-center gap-6 md:gap-8 text-sm text-muted-foreground"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span>Led by Chartered Accountant</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span>Proprietary Intelligence Stack</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-              <span>Enterprise-Grade Systems</span>
-            </div>
+            {[
+              "Led by Chartered Accountant",
+              "Proprietary Intelligence Stack",
+              "Enterprise-Grade Systems"
+            ].map((text, index) => (
+              <motion.div
+                key={text}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 2 + index * 0.2, duration: 0.5 }}
+                className="flex items-center gap-2"
+              >
+                <motion.div
+                  className="w-1.5 h-1.5 rounded-full bg-primary"
+                  animate={{ scale: [1, 1.5, 1] }}
+                  transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                />
+                <span>{text}</span>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>
