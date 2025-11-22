@@ -6,100 +6,75 @@ const Footer = () => {
     <footer className="relative py-12 bg-navy-deep border-t border-border">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
-          >
-            {/* Company info */}
-            <div>
-              <h3 className="text-xl font-bold mb-4">GTM Outbound Services</h3>
-              <p className="text-steel leading-relaxed">
-                Revenue systems engineering led by a Chartered Accountant with FTSE 100 & Fortune 500 experience.
-              </p>
-            </div>
+        <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8"
+>
+  {/* Company info */}
+  <div>
+    <img
+      src="/logo2.png"
+      alt="GTM Outbound Services Logo"
+      className="h-32 md:h-36 lg:h-40 object-contain mb-6"
+    />
 
-            {/* Services */}
-            <div>
-              <h4 className="text-lg font-bold mb-4">Services</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    Revenue Diagnostic
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    Pilot Engagement
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    Full Revenue System
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    Market Intelligence
-                  </a>
-                </li>
-              </ul>
-            </div>
+    <h3 className="text-xl font-bold mb-4">GTM Outbound Services</h3>
+    <p className="text-steel leading-relaxed">
+      Revenue systems engineering led by a Chartered Accountant with FTSE 100 & Fortune 500 experience.
+    </p>
+  </div>
 
-            {/* Industries */}
-            <div>
-              <h4 className="text-lg font-bold mb-4">Industries</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    Professional Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    RegTech & Compliance
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    FinTech SaaS
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-steel hover:text-primary transition-colors">
-                    PE/VC-Backed
-                  </a>
-                </li>
-              </ul>
-            </div>
+  {/* Services */}
+  <div>
+    <h4 className="text-lg font-bold mb-4">Services</h4>
+    <ul className="space-y-2">
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">Revenue Diagnostic</a></li>
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">Pilot Engagement</a></li>
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">Full Revenue System</a></li>
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">Market Intelligence</a></li>
+    </ul>
+  </div>
 
-            {/* Contact */}
-            <div>
-              <h4 className="text-lg font-bold mb-4">Get in Touch</h4>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#" className="flex items-center gap-2 text-steel hover:text-primary transition-colors">
-                    <LinkedinIcon className="w-4 h-4" />
-                    <span>LinkedIn</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:contact@gtmoutbound.com" className="flex items-center gap-2 text-steel hover:text-primary transition-colors">
-                    <Mail className="w-4 h-4" />
-                    <span>Email Us</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="flex items-center gap-2 text-steel hover:text-primary transition-colors">
-                    <Phone className="w-4 h-4" />
-                    <span>Schedule Call</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
+  {/* Industries */}
+  <div>
+    <h4 className="text-lg font-bold mb-4">Industries</h4>
+    <ul className="space-y-2">
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">Professional Services</a></li>
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">RegTech & Compliance</a></li>
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">FinTech SaaS</a></li>
+      <li><a href="#" className="text-steel hover:text-primary transition-colors">PE/VC-Backed</a></li>
+    </ul>
+  </div>
+
+  {/* Contact */}
+  <div>
+    <h4 className="text-lg font-bold mb-4">Get in Touch</h4>
+    <ul className="space-y-3">
+      <li>
+        <a href="#" className="flex items-center gap-2 text-steel hover:text-primary transition-colors">
+          <LinkedinIcon className="w-4 h-4" />
+          <span>LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:contact@gtmoutbound.com" className="flex items-center gap-2 text-steel hover:text-primary transition-colors">
+          <Mail className="w-4 h-4" />
+          <span>Email Us</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" className="flex items-center gap-2 text-steel hover:text-primary transition-colors">
+          <Phone className="w-4 h-4" />
+          <span>Schedule Call</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</motion.div>
+
 
           {/* Bottom bar */}
           <div className="pt-8 border-t border-border">
