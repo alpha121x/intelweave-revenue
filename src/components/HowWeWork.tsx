@@ -1,0 +1,116 @@
+import { motion } from "framer-motion";
+import { Search, Wrench, Rocket } from "lucide-react";
+
+const phases = [
+  {
+    icon: Search,
+    number: "Phase 1",
+    title: "Revenue Diagnostic (Week 1-2)",
+    description: "We reverse-engineer your market:",
+    items: [
+      "Competitive landscape analysis (who's winning and why)",
+      "ICP validation with data (not assumptions)",
+      "Pain point discovery and market gap identification",
+      "GTM efficiency audit",
+      "Strategic roadmap with prioritized opportunities",
+    ],
+  },
+  {
+    icon: Wrench,
+    number: "Phase 2",
+    title: "System Build (Week 3-6)",
+    description: "We engineer your revenue infrastructure:",
+    items: [
+      "Automated intelligence extraction systems",
+      "ICP scoring and prioritization models",
+      "Pain point-led messaging frameworks",
+      "Multi-channel outreach sequences",
+      "Integration with your existing tech stack",
+    ],
+  },
+  {
+    icon: Rocket,
+    number: "Phase 3",
+    title: "Launch & Optimize (Week 7+)",
+    description: "We deploy and continuously refine:",
+    items: [
+      "Targeted account engagement",
+      "Real-time performance monitoring",
+      "Weekly strategic reviews",
+      "Continuous market intelligence updates",
+      "System optimization based on conversion data",
+    ],
+  },
+];
+
+const HowWeWork = () => {
+  return (
+    <section className="relative py-24 bg-gradient-primary">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          {/* Section header */}
+          <div className="mb-16 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+              How We Work
+            </h2>
+            <p className="text-xl text-steel max-w-3xl mx-auto">
+              A systematic approach to building predictable revenue systems
+            </p>
+          </div>
+
+          {/* Phases */}
+          <div className="space-y-8">
+            {phases.map((phase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className="relative"
+              >
+                {/* Connector line */}
+                {index < phases.length - 1 && (
+                  <div className="absolute left-[52px] top-[80px] bottom-[-32px] w-0.5 bg-gradient-to-b from-primary to-transparent" />
+                )}
+                
+                <div className="group p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-depth">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0 relative z-10">
+                      <div className="w-20 h-20 rounded-xl bg-gradient-accent border-2 border-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <phase.icon className="w-10 h-10 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <div className="mb-4">
+                        <div className="text-sm font-semibold text-primary mb-2">{phase.number}</div>
+                        <h3 className="text-3xl font-bold mb-3">{phase.title}</h3>
+                        <p className="text-xl text-steel mb-6">{phase.description}</p>
+                      </div>
+                      <ul className="space-y-3">
+                        {phase.items.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
+                            <span className="text-steel leading-relaxed">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default HowWeWork;
