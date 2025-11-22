@@ -16,7 +16,7 @@ const Footer = () => {
             {/* Company info */}
             <div>
               <img
-                src="/logo2.png"
+                src="/logoo.png"
                 alt="GTM Outbound Services Logo"
                 className="h-32 md:h-36 lg:h-40 object-contain mb-6"
               />
