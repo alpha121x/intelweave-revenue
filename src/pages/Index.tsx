@@ -10,6 +10,7 @@ import HowWeWork from "@/components/HowWeWork";
 import Testimonials from "@/components/Testimonials";
 import Investment from "@/components/Investment";
 import FinalCTA from "@/components/FinalCTA";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <Testimonials />
       <Investment />
       <FinalCTA />
+      <Footer />
     </main>
   );
 };
