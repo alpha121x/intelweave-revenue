@@ -11,8 +11,8 @@ const Hero = () => {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_15%_20%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_15%_20%/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       
-      {/* Surgical red accent glow */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-surgical-red/10 blur-[120px] rounded-full" />
+      {/* Teal accent glow */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/15 blur-[120px] rounded-full" />
 
       <div className="container relative z-30 mx-auto px-6 py-20">
         <motion.div

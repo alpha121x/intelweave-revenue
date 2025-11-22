@@ -5,8 +5,8 @@ import { ArrowRight, LinkedinIcon } from "lucide-react";
 const FinalCTA = () => {
   return (
     <section className="relative py-32 bg-gradient-primary overflow-hidden">
-      {/* Surgical red accent glow */}
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-surgical-red/10 blur-[120px] rounded-full" />
+      {/* Teal accent glow */}
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/15 blur-[120px] rounded-full" />
 
       <div className="container relative z-10 mx-auto px-6">
         <motion.div

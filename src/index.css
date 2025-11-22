@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 220 20% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 72% 51%;
+    --primary: 186 65% 42%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 15% 18%;
@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 220 12% 16%;
     --muted-foreground: 220 10% 55%;
 
-    --accent: 0 72% 51%;
+    --accent: 186 65% 42%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
@@ -34,7 +34,7 @@ All colors MUST be HSL.
 
     --border: 220 15% 20%;
     --input: 220 15% 18%;
-    --ring: 0 72% 51%;
+    --ring: 186 65% 42%;
 
     --radius: 0.5rem;
 
@@ -44,16 +44,16 @@ All colors MUST be HSL.
     --navy-lighter: 220 15% 18%;
     --charcoal: 220 10% 25%;
     --steel: 220 8% 45%;
-    --surgical-red: 0 72% 51%;
-    --surgical-red-glow: 0 72% 51%;
+    --teal-primary: 186 65% 42%;
+    --teal-glow: 186 65% 42%;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 20% 14%));
     --gradient-surface: linear-gradient(180deg, hsl(220 18% 12%), hsl(220 20% 10%));
-    --gradient-accent: linear-gradient(90deg, hsl(0 72% 51% / 0.15), transparent);
+    --gradient-accent: linear-gradient(90deg, hsl(186 65% 42% / 0.15), transparent);
     
     /* Shadows */
-    --shadow-surgical: 0 0 40px hsl(0 72% 51% / 0.15);
+    --shadow-surgical: 0 0 40px hsl(186 65% 42% / 0.25);
     --shadow-depth: 0 20px 50px -20px hsl(220 50% 5% / 0.8);
     
     /* Transitions */
@@ -107,7 +107,7 @@ All colors MUST be HSL.
 
   /* Selection styling */
   ::selection {
-    background-color: hsl(var(--surgical-red) / 0.2);
+    background-color: hsl(var(--teal-primary) / 0.2);
     color: hsl(var(--foreground));
   }
 }
@@ -137,8 +137,8 @@ All colors MUST be HSL.
     background-clip: text;
   }
 
-  /* Surgical glow effect */
+  /* Teal glow effect */
   .surgical-glow {
-    box-shadow: 0 0 30px hsl(var(--surgical-red) / 0.15), 0 0 60px hsl(var(--surgical-red) / 0.1);
+    box-shadow: 0 0 30px hsl(var(--teal-primary) / 0.25), 0 0 60px hsl(var(--teal-primary) / 0.15);
   }
 }

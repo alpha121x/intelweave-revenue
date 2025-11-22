@@ -54,8 +54,8 @@ export default {
         },
         charcoal: "hsl(var(--charcoal))",
         steel: "hsl(var(--steel))",
-        surgical: {
-          red: "hsl(var(--surgical-red))",
+        teal: {
+          primary: "hsl(var(--teal-primary))",
         },
       },
       backgroundImage: {
@@ -101,8 +101,8 @@ export default {
           to: { opacity: "1", transform: "translateX(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(0 72% 51% / 0.1)" },
-          "50%": { boxShadow: "0 0 40px hsl(0 72% 51% / 0.2)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(186 65% 42% / 0.15)" },
+          "50%": { boxShadow: "0 0 40px hsl(186 65% 42% / 0.3)" },
         },
         "shimmer": {
           "0%": { backgroundPosition: "-200% 0" },
