@@ -21,11 +21,11 @@ const Footer = () => {
                 className="h-32 md:h-36 lg:h-40 object-contain mb-6"
               />
 
-              <h3 className="text-xl font-bold mb-4">GTM Outbound Services</h3>
-              <p className="text-steel leading-relaxed">
+              {/* <h3 className="text-xl font-bold mb-4">GTM Outbound Services</h3> */}
+              {/* <p className="text-steel leading-relaxed">
                 Revenue systems engineering led by a Chartered Accountant with
                 FTSE 100 & Fortune 500 experience.
-              </p>
+              </p> */}
             </div>
 
             {/* Services */}
