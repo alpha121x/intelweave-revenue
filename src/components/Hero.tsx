@@ -7,10 +7,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-primary" />
-      
+
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_15%_20%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_15%_20%/0.1)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-      
+
       {/* Teal accent glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/15 blur-[120px] rounded-full" />
 
@@ -21,19 +21,30 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Overline with enhanced animation */}
+          {/* Overline with Logo & Company Name */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-8 backdrop-blur-sm"
+            className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-secondary/50 border border-border mb-8 backdrop-blur-sm"
           >
-            <motion.span
-              className="w-2 h-2 rounded-full bg-primary"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            {/* Logo animation */}
+            <motion.img
+              src="/logoo.png" // <-- replace with actual logo path in /public
+              alt="GTM Outbound Services"
+              className="w-6 h-6 rounded-full object-contain"
+              initial={{ opacity: 0, rotate: -10 }}
+              animate={{ opacity: 1, rotate: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             />
-            <span className="text-sm font-medium text-steel">Forensic Market Intelligence</span>
+
+            <motion.span
+              className="text-sm font-semibold text-steel tracking-wide"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              GTM Outbound Services
+            </motion.span>
           </motion.div>
 
           {/* Main headline with staggered word animation */}
@@ -54,7 +65,12 @@ const Hero = () => {
               className="text-primary"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8, duration: 0.5, type: "spring", stiffness: 200 }}
+              transition={{
+                delay: 0.8,
+                duration: 0.5,
+                type: "spring",
+                stiffness: 200,
+              }}
             >
               →
             </motion.span>{" "}
@@ -75,7 +91,10 @@ const Hero = () => {
             transition={{ delay: 1.2, duration: 0.7, ease: "easeOut" }}
             className="text-xl md:text-2xl text-steel mb-4 max-w-3xl mx-auto leading-relaxed text-balance"
           >
-            We reverse-engineer your market, competitors, and highest-converting deal patterns to build automated outbound systems that deliver pre-qualified, high-intent conversations – consistently and scalably.
+            We reverse-engineer your market, competitors, and highest-converting
+            deal patterns to build automated outbound systems that deliver
+            pre-qualified, high-intent conversations – consistently and
+            scalably.
           </motion.p>
 
           {/* Proof points with enhanced animation */}
@@ -95,20 +114,22 @@ const Hero = () => {
             transition={{ delay: 1.6, duration: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button variant="surgical" size="xl" className="group shadow-lg hover:shadow-xl transition-shadow">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="surgical"
+                size="xl"
+                className="group shadow-lg hover:shadow-xl transition-shadow"
+              >
                 Book a 15-Minute Intelligence Audit
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button variant="intelligence" size="xl" className="group shadow-lg hover:shadow-xl transition-shadow">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                variant="intelligence"
+                size="xl"
+                className="group shadow-lg hover:shadow-xl transition-shadow"
+              >
                 <LinkedinIcon className="mr-2" />
                 DM "INTEL" on LinkedIn
               </Button>
@@ -125,7 +146,7 @@ const Hero = () => {
             {[
               "Led by Chartered Accountant",
               "Proprietary Intelligence Stack",
-              "Enterprise-Grade Systems"
+              "Enterprise-Grade Systems",
             ].map((text, index) => (
               <motion.div
                 key={text}
@@ -137,14 +158,18 @@ const Hero = () => {
                 <motion.div
                   className="w-1.5 h-1.5 rounded-full bg-primary"
                   animate={{ scale: [1, 1.5, 1] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: index * 0.5,
+                  }}
                 />
                 <span>{text}</span>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
-        
+
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -161,7 +186,11 @@ const Hero = () => {
             <div className="w-6 h-10 rounded-full border-2 border-border/50 flex items-start justify-center p-2">
               <motion.div
                 animate={{ y: [0, 12, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="w-1 h-2 rounded-full bg-primary"
               />
             </div>
