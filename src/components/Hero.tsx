@@ -30,9 +30,9 @@ const Hero = () => {
           >
             {/* Logo animation */}
             <motion.img
-              src="/logoo.png" // <-- replace with actual logo path in /public
+              src="/logoo.png"
               alt="GTM Outbound Services"
-              className="w-6 h-6 rounded-full object-contain"
+              className="w-10 h-10 rounded-full object-contain"
               initial={{ opacity: 0, rotate: -10 }}
               animate={{ opacity: 1, rotate: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
