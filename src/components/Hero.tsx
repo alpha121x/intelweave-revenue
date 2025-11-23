@@ -184,84 +184,66 @@ const Hero = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.2, duration: 0.8 }}
-              className="py-5 px-8 md:px-12 inline-flex items-center justify-center rounded-full bg-background/40 backdrop-blur-lg border border-border/60 shadow-2xl mx-auto"
+              className="py-6 px-10 md:px-14 inline-flex items-center justify-center rounded-full bg-background/40 backdrop-blur-xl border border-border/70 shadow-2xl mx-auto"
             >
-              <div className="flex items-center justify-center gap-10 md:gap-14 flex-wrap">
+              <div className="flex items-center gap-10 md:gap-16 flex-wrap justify-center">
                 {/* Label */}
                 <span className="text-sm font-medium text-muted-foreground/70 whitespace-nowrap hidden sm:block">
                   As seen in / Powered by:
                 </span>
 
-                <div className="flex items-center gap-9 md:gap-12">
-                  {/* ACCA */}
-                  <motion.div
+                <div className="flex items-center gap-8 md:gap-12">
+                  {/* 1. ACCA – square-ish, normal size */}
+                  <motion.img
+                    src="/logos/acca-logo.jpeg"
+                    alt="ACCA"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.4, duration: 0.5 }}
-                    className="h-10 flex items-center justify-center"
-                  >
-                    <img
-                      src="/logos/acca-logo.jpeg"
-                      alt="ACCA"
-                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    />
-                  </motion.div>
+                    transition={{ delay: 2.4 }}
+                    className="h-11 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                  />
 
-                  {/* LinkedIn - now looks perfect */}
-                  <motion.div
+                  {/* 2. LinkedIn – very small/narrow → boost it */}
+                  <motion.img
+                    src="/logos/linkedin-logo.png"
+                    alt="LinkedIn"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.5, duration: 0.5 }}
-                    className="h-10 flex items-center justify-center"
-                  >
-                    <img
-                      src="/logos/linkedin-logo.png"
-                      alt="LinkedIn"
-                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    />
-                  </motion.div>
+                    transition={{ delay: 2.5 }}
+                    className="h-12 w-12 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    style={{ minWidth: "44px" }} // forces consistent clickable area
+                  />
 
-                  {/* Clay */}
-                  <motion.div
+                  {/* 3. Clay – already bold, slight bump */}
+                  <motion.img
+                    src="/logos/clay-logo.png"
+                    alt="Clay"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.6, duration: 0.5 }}
-                    className="h-10 flex items-center justify-center"
-                  >
-                    <img
-                      src="/logos/clay-logo.png"
-                      alt="Clay"
-                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    />
-                  </motion.div>
+                    transition={{ delay: 2.6 }}
+                    className="h-14 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                  />
 
-                  {/* HubSpot */}
-                  <motion.div
+                  {/* 4. HubSpot – naturally tall, give it room */}
+                  <motion.img
+                    src="/logos/hubspot-logo.png"
+                    alt="HubSpot Certified Partner"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.7, duration: 0.5 }}
-                    className="h-11 flex items-center justify-center" // slightly taller for HubSpot
-                  >
-                    <img
-                      src="/logos/hubspot-logo.png"
-                      alt="HubSpot Certified Partner"
-                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    />
-                  </motion.div>
+                    transition={{ delay: 2.7 }}
+                    className="h-12 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                  />
 
-                  {/* UK Government Crown - now perfectly proportioned */}
-                  <motion.div
+                  {/* 5. UK Government Crown – tiny icon → make it proud */}
+                  <motion.img
+                    src="/logos/uk-logo.png"
+                    alt="UK Government"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.8, duration: 0.5 }}
-                    className="h-10 flex items-center justify-center"
-                  >
-                    <img
-                      src="/logos/uk-gov-logo.png"
-                      alt="UK Government"
-                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    />
-                  </motion.div>
+                    transition={{ delay: 2.8 }}
+                    className="h-14 w-14 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    style={{ minWidth: "52px" }}
+                  />
                 </div>
               </div>
             </motion.div>
@@ -270,7 +252,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Scroll indicator - Moved outside the main motion.div for better visual placement */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.5, duration: 1 }}
@@ -294,7 +276,7 @@ const Hero = () => {
               />
             </div>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
