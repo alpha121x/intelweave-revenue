@@ -12,6 +12,7 @@ const ReferralWarning = () => {
                     transition={{ duration: 0.6 }}
                     className="max-w-7xl mx-auto"
                 >
+
                     {/* Section header */}
                     <div className="mb-12 text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
@@ -30,13 +31,13 @@ const ReferralWarning = () => {
 
                     {/* Two-column grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
+
                         {/* Problem Side */}
                         <motion.div
                             initial={{ opacity: 0, x: -40 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8 }}
-                            whileHover={{ y: -4 }}
                             className="
                                 p-6 md:p-10 
                                 bg-card 
@@ -44,8 +45,8 @@ const ReferralWarning = () => {
                                 rounded-xl 
                                 flex flex-col 
                                 h-full 
-                                hover:border-primary/60 
-                                hover:shadow-[0_0_20px_rgba(0,102,255,0.15)] 
+                                hover:border-primary/50 
+                                hover:shadow-depth
                                 transition-all 
                                 duration-300
                             "
@@ -91,7 +92,6 @@ const ReferralWarning = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8 }}
-                            whileHover={{ y: -4 }}
                             className="
                                 p-6 md:p-10 
                                 bg-card 
@@ -99,8 +99,8 @@ const ReferralWarning = () => {
                                 rounded-xl 
                                 flex flex-col 
                                 h-full 
-                                hover:border-primary/60 
-                                hover:shadow-[0_0_20px_rgba(0,102,255,0.15)] 
+                                hover:border-primary/50 
+                                hover:shadow-depth
                                 transition-all 
                                 duration-300
                             "
@@ -139,6 +139,7 @@ const ReferralWarning = () => {
                                 </p>
                             </div>
                         </motion.div>
+
                     </div>
                 </motion.div>
             </div>
