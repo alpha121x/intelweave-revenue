@@ -18,7 +18,8 @@ const FinalCTA = () => {
         >
           {/* Questions */}
           <p className="text-xl text-steel mb-6">
-            Revenue flat? Pipeline volatile? Ready to take share from competitors?
+            Revenue flat? Pipeline volatile? Ready to take share from
+            competitors?
           </p>
 
           {/* Main headline */}
@@ -29,7 +30,8 @@ const FinalCTA = () => {
 
           {/* Subheadline */}
           <p className="text-xl text-steel mb-12 max-w-2xl mx-auto text-balance">
-            We'll reverse-engineer one hidden gap that's quietly limiting your growth – no pitch, just data.
+            We'll reverse-engineer one hidden gap that's quietly limiting your
+            growth – no pitch, just data.
           </p>
 
           {/* CTA buttons */}
@@ -38,15 +40,22 @@ const FinalCTA = () => {
               Book Audit
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="intelligence" size="xl" className="group">
-              <LinkedinIcon className="mr-2" />
-              DM "INTEL" on LinkedIn
-            </Button>
+            <a
+              href="https://www.linkedin.com/company/gtmoutboundservices/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button variant="intelligence" size="xl" className="group">
+                <LinkedinIcon className="mr-2" />
+                DM "INTEL" on LinkedIn
+              </Button>
+            </a>
           </div>
 
           {/* Alternative CTA */}
           <p className="text-muted-foreground">
-            Or DM <span className="font-semibold text-foreground">"INTEL"</span> on LinkedIn for the 60-second version.
+            Or DM <span className="font-semibold text-foreground">"INTEL"</span>{" "}
+            on LinkedIn for the 60-second version.
           </p>
 
           {/* Accent line */}
