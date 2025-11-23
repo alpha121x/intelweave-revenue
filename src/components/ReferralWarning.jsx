@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TrendingDown, Target, Zap, AlertCircle } from "lucide-react";
+import { TrendingDown, Target, Zap } from "lucide-react";
 
 const ReferralWarning = () => {
     return (
@@ -14,17 +14,17 @@ const ReferralWarning = () => {
                 >
                     {/* Section header */}
                     <div className="mb-12 text-center">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-destructive/10 border border-destructive/20 mb-6">
-                            <AlertCircle className="w-4 h-4 text-destructive" />
-                            <span className="text-sm font-medium text-destructive">
-                                Critical Warning
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                            <Target className="w-4 h-4 text-primary" />
+                            <span className="text-sm font-medium text-primary">
+                                Predictable Revenue Systems
                             </span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-                            You're One Slow Month Away From Panic
+                            Why Referral-Dependent B2B Sales Pipelines Fail
                         </h2>
                         <p className="text-xl text-muted-foreground">
-                            If You Rely Only on Referrals or Inbound, Your Pipeline is a Rollercoaster.
+                            Build a Scalable Outbound Lead Generation Engine for Predictable Enterprise Growth
                         </p>
                     </div>
 
@@ -36,12 +36,12 @@ const ReferralWarning = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className="p-8 bg-card border border-border rounded-xl hover:border-destructive/50 transition-all duration-300 hover:shadow-depth"
+                            className="p-8 bg-card border border-border rounded-xl hover:border-border/80 transition-all duration-300 hover:shadow-depth"
                         >
                             <div className="flex items-start gap-4 mb-6">
                                 <div className="flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-lg bg-destructive/10 flex items-center justify-center">
-                                        <TrendingDown className="w-6 h-6 text-destructive" />
+                                    <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
+                                        <TrendingDown className="w-6 h-6 text-steel" />
                                     </div>
                                 </div>
                                 <h3 className="text-2xl font-bold">
@@ -50,25 +50,25 @@ const ReferralWarning = () => {
                             </div>
                             <ul className="space-y-4 mb-6">
                                 <li className="flex items-start gap-3">
-                                    <span className="text-destructive mt-1 text-lg">•</span>
+                                    <span className="text-steel mt-1 text-lg">•</span>
                                     <span className="text-lg text-muted-foreground">Partners stop sending deals.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <span className="text-destructive mt-1 text-lg">•</span>
+                                    <span className="text-steel mt-1 text-lg">•</span>
                                     <span className="text-lg text-muted-foreground">Word-of-mouth dries up.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <span className="text-destructive mt-1 text-lg">•</span>
+                                    <span className="text-steel mt-1 text-lg">•</span>
                                     <span className="text-lg text-muted-foreground">SEO tanks or you enter a new market where nobody knows you.</span>
                                 </li>
                                 <li className="flex items-start gap-3">
-                                    <span className="text-destructive mt-1 text-lg">•</span>
+                                    <span className="text-steel mt-1 text-lg">•</span>
                                     <span className="text-lg text-muted-foreground">Pipeline turns into a rollercoaster.</span>
                                 </li>
                             </ul>
                             <div className="pt-6 border-t border-border">
                                 <p className="text-lg font-semibold text-foreground">
-                                    Referrals built your past. Intelligent GTM outbound secures your future.
+                                    Referrals built your past. Intelligent outbound sales automation secures your future.
                                 </p>
                             </div>
                         </motion.div>
@@ -111,7 +111,7 @@ const ReferralWarning = () => {
                             </ul>
                             <div className="pt-6 border-t border-border">
                                 <p className="text-lg font-semibold text-primary">
-                                    Don't leave growth to chance and hope. Take control with intelligent outbound.
+                                    Transform unpredictable referrals into a controllable B2B lead generation system.
                                 </p>
                             </div>
                         </motion.div>
