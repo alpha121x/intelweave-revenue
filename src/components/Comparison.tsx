@@ -7,7 +7,7 @@ const comparisons = [
     new: "Proprietary forensic intelligence + live signals",
   },
   {
-    old: "Spray everyone in the ICP",
+    old: "Hyper-speicific data with accounts indicating intent",
     new: "Surgical: only accounts showing intent",
   },
   {
