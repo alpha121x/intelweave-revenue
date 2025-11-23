@@ -96,7 +96,7 @@ const Why = () => {
             className="mt-12 p-8 bg-gradient-accent border border-primary/20 rounded-xl text-center"
           >
             <p className="text-lg text-foreground font-medium">
-              We bridge strategy (what to do) and execution (how to automate it)
+              We bridge strategy (what to do) and execution (how to implement it)
             </p>
           </motion.div>
         </motion.div>

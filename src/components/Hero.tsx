@@ -178,68 +178,91 @@ const Hero = () => {
             ))}
           </motion.div>
 
-          {/* --- CREDIBILITY BAR (REVISED with IMG tags for actual logos) --- */}
+          {/* --- CREDIBILITY BAR (Improved: Bigger Logos + Better Spacing) --- */}
           <div className="mt-12 w-full">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.2, duration: 0.8 }}
-              className="py-3 px-6 md:px-10 inline-flex items-center justify-center rounded-full bg-background/30 backdrop-blur-md border border-border/50 shadow-lg"
+              className="py-5 px-8 md:px-12 inline-flex items-center justify-center rounded-full bg-background/40 backdrop-blur-lg border border-border/60 shadow-2xl mx-auto"
             >
-              <div className="flex items-center justify-center space-x-6 md:space-x-8">
-                <span className="text-xs font-medium text-steel/70 hidden sm:block">
+              <div className="flex items-center justify-center gap-10 md:gap-14 flex-wrap">
+                {/* Label */}
+                <span className="text-sm font-medium text-muted-foreground/70 whitespace-nowrap hidden sm:block">
                   As seen in / Powered by:
                 </span>
 
-                {/* 1. Chartered Accountant ACCA logo */}
-                <motion.img
-                  src="/logos/acca-logo.jpeg" // <--- Update this path
-                  alt="ACCA Chartered Accountant"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.4, duration: 0.4 }}
-                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
-                />
+                <div className="flex items-center gap-9 md:gap-12">
+                  {/* ACCA */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.4, duration: 0.5 }}
+                    className="h-10 flex items-center justify-center"
+                  >
+                    <img
+                      src="/logos/acca-logo.jpeg"
+                      alt="ACCA"
+                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    />
+                  </motion.div>
 
-                {/* 2. LinkedIn logo (DM "Intel") - Using the Lucide icon for simplicity here, as it's just a visual cue */}
-                 <motion.img
-                  src="/logos/linkedin-logo.png" // <--- Update this path
-                  alt="LinkedIn Logo"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.4, duration: 0.4 }}
-                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
-                />
+                  {/* LinkedIn - now looks perfect */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.5, duration: 0.5 }}
+                    className="h-10 flex items-center justify-center"
+                  >
+                    <img
+                      src="/logos/linkedin-logo.png"
+                      alt="LinkedIn"
+                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    />
+                  </motion.div>
 
-                {/* 3. HubSpot partner badge or Clay logo */}
-                <motion.img
-                  src="/logos/clay-logo.png" // <--- Update this path
-                  alt="Tech Partner Logo (Clay/HubSpot)"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.6, duration: 0.4 }}
-                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
-                />
+                  {/* Clay */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.6, duration: 0.5 }}
+                    className="h-10 flex items-center justify-center"
+                  >
+                    <img
+                      src="/logos/clay-logo.png"
+                      alt="Clay"
+                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    />
+                  </motion.div>
 
-                {/* 3. HubSpot partner badge */}
-                <motion.img
-                  src="/logos/hubspot-logo.png" // <--- Update this path
-                  alt="Tech Partner Logo (HubSpot)"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.6, duration: 0.4 }}
-                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
-                />
+                  {/* HubSpot */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.7, duration: 0.5 }}
+                    className="h-11 flex items-center justify-center" // slightly taller for HubSpot
+                  >
+                    <img
+                      src="/logos/hubspot-logo.png"
+                      alt="HubSpot Certified Partner"
+                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    />
+                  </motion.div>
 
-                {/* 4. UK Government Crown logo */}
-                <motion.img
-                  src="/logos/uk-gov-logo.png" // <--- Update this path
-                  alt="UK Government Crown"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.7, duration: 0.4 }}
-                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
-                />
+                  {/* UK Government Crown - now perfectly proportioned */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.8, duration: 0.5 }}
+                    className="h-10 flex items-center justify-center"
+                  >
+                    <img
+                      src="/logos/uk-gov-logo.png"
+                      alt="UK Government"
+                      className="h-full w-auto max-w-none object-contain opacity-75 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    />
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>
