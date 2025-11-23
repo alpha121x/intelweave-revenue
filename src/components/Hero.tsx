@@ -167,7 +167,41 @@ const Hero = () => {
                 />
                 <span>{text}</span>
               </motion.div>
-            ))}
+          ))}
+          </motion.div>
+
+          {/* As seen in / Powered by */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.2, duration: 0.6 }}
+            className="mt-20 pt-12 border-t border-border/30"
+          >
+            <p className="text-xs text-muted-foreground/60 mb-6 text-center">
+              As seen in / Powered by
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {[
+                { name: "ACCA Chartered Accountant", path: "/placeholder.svg", alt: "ACCA Logo" },
+                { name: "LinkedIn", path: "/placeholder.svg", alt: "LinkedIn" },
+                { name: "Clay", path: "/placeholder.svg", alt: "Clay" },
+                { name: "UK Government", path: "/placeholder.svg", alt: "UK Gov Crown" },
+              ].map((logo, index) => (
+                <motion.div
+                  key={logo.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.4 + index * 0.1, duration: 0.5 }}
+                  className="grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300"
+                >
+                  <img
+                    src={logo.path}
+                    alt={logo.alt}
+                    className="h-8 md:h-10 w-auto object-contain"
+                  />
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </motion.div>
 
