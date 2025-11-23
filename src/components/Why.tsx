@@ -5,7 +5,7 @@ const advantages = [
   {
     icon: Award,
     title: "Financial & Strategic Depth",
-    description: "Led by a Chartered Accountant who spent years inside FTSE 100 & Fortune 500 balance sheets",
+    description: "Led by a Chartered Accountant with global experience across listed, PE-backend, and high-growth companies - bringing forensic commercial insight to every projecy.",
   },
   {
     icon: Cpu,
@@ -19,7 +19,7 @@ const advantages = [
   },
   {
     icon: Target,
-    title: "Small, Senior Team",
+    title: "Dedicated Team",
     description: "Team of 4 – no junior delivery, no diluted quality",
   },
 ];
