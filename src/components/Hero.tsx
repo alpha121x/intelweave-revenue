@@ -147,6 +147,7 @@ const Hero = () => {
               "Led by Chartered Accountant",
               "Proprietary Intelligence Stack",
               "Enterprise-Grade Systems",
+              "Strategist with a 20-30% conversion rate",
             ].map((text, index) => (
               <motion.div
                 key={text}
