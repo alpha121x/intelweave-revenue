@@ -193,7 +193,7 @@ const Hero = () => {
 
                 {/* 1. Chartered Accountant ACCA logo */}
                 <motion.img
-                  src="/logos/acca-logo.png" // <--- Update this path
+                  src="/logos/acca-logo.jpeg" // <--- Update this path
                   alt="ACCA Chartered Accountant"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -202,19 +202,29 @@ const Hero = () => {
                 />
 
                 {/* 2. LinkedIn logo (DM "Intel") - Using the Lucide icon for simplicity here, as it's just a visual cue */}
-                <motion.div
+                 <motion.img
+                  src="/logos/linkedin-logo.png" // <--- Update this path
+                  alt="LinkedIn Logo"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.5, duration: 0.4 }}
-                  className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
-                >
-                  <LinkedinIcon className="w-5 h-5 text-primary/80 md:w-6 md:h-6" />
-                </motion.div>
+                  transition={{ delay: 2.4, duration: 0.4 }}
+                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
+                />
 
                 {/* 3. HubSpot partner badge or Clay logo */}
                 <motion.img
-                  src="/logos/clay-hubspot-logo.png" // <--- Update this path
+                  src="/logos/clay-logo.png" // <--- Update this path
                   alt="Tech Partner Logo (Clay/HubSpot)"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.6, duration: 0.4 }}
+                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
+                />
+
+                {/* 3. HubSpot partner badge */}
+                <motion.img
+                  src="/logos/hubspot-logo.png" // <--- Update this path
+                  alt="Tech Partner Logo (HubSpot)"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2.6, duration: 0.4 }}
@@ -223,7 +233,7 @@ const Hero = () => {
 
                 {/* 4. UK Government Crown logo */}
                 <motion.img
-                  src="/logos/uk-crown-logo.svg" // <--- Update this path
+                  src="/logos/uk-gov-logo.png" // <--- Update this path
                   alt="UK Government Crown"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
