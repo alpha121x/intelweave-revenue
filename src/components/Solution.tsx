@@ -33,8 +33,8 @@ const solutions = [
     icon: Zap,
     title: "Proprietary Automation Stack (runs 24/7)",
     points: [
-      "Universal Company Intelligence™ – company name → 100+ data points instantly",
-      "Real-time Government & Enterprise Tender Monitoring (UK • EU • US • CAN • AUS)",
+      "Universal Company Intelligence – company name → 100+ data points instantly",
+      "Real-time Government & Enterprise Tender Monitoring (UK • EU • CAN • AUS)",
       "Global Registry & Filings Extraction Engine",
       "Autonomous Multi-Channel Orchestration (LinkedIn + Email + Call)",
     ],
