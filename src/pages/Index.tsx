@@ -7,6 +7,7 @@ import WhoWeWorkWith from "@/components/WhoWeWorkWith";
 import ValueROI from "@/components/ValueROI";
 import ProprietarySystems from "@/components/ProprietarySystems";
 import HowWeWork from "@/components/HowWeWork";
+import ReferralWarning from "@/components/ReferralWarning";
 import Testimonials from "@/components/Testimonials";
 import Investment from "@/components/Investment";
 import FinalCTA from "@/components/FinalCTA";
@@ -24,6 +25,7 @@ const Index = () => {
       <ValueROI />
       <ProprietarySystems />
       <HowWeWork />
+      <ReferralWarning />
       <Testimonials />
       <Investment />
       <FinalCTA />
