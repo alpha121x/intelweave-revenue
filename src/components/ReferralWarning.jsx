@@ -10,7 +10,7 @@ const ReferralWarning = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
-                    className="max-w-5xl mx-auto"
+                    className="max-w-7xl mx-auto"
                 >
                     {/* Section header */}
                     <div className="mb-12 text-center">
@@ -29,25 +29,36 @@ const ReferralWarning = () => {
                     </div>
 
                     {/* Two-column grid */}
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
                         {/* Problem Side */}
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }}
+                            initial={{ opacity: 0, x: -40 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="p-8 bg-card border border-border rounded-xl hover:border-border/80 transition-all duration-300 hover:shadow-depth"
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
+                            whileHover={{ y: -4 }}
+                            className="
+                                p-6 md:p-10 
+                                bg-card 
+                                border border-border 
+                                rounded-xl 
+                                flex flex-col 
+                                h-full 
+                                hover:border-primary/60 
+                                hover:shadow-[0_0_20px_rgba(0,102,255,0.15)] 
+                                transition-all 
+                                duration-300
+                            "
                         >
                             <div className="flex items-start gap-4 mb-6">
-                                <div className="flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
-                                        <TrendingDown className="w-6 h-6 text-steel" />
-                                    </div>
+                                <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center">
+                                    <TrendingDown className="w-6 h-6 text-steel" />
                                 </div>
                                 <h3 className="text-2xl font-bold">
                                     Why Referral Growth Fails
                                 </h3>
                             </div>
+
                             <ul className="space-y-4 mb-6">
                                 <li className="flex items-start gap-3">
                                     <span className="text-steel mt-1 text-lg">•</span>
@@ -66,7 +77,8 @@ const ReferralWarning = () => {
                                     <span className="text-lg text-muted-foreground">Pipeline turns into a rollercoaster.</span>
                                 </li>
                             </ul>
-                            <div className="pt-6 border-t border-border">
+
+                            <div className="pt-6 border-t border-border mt-auto">
                                 <p className="text-lg font-semibold text-foreground">
                                     Referrals built your past. Intelligent outbound sales automation secures your future.
                                 </p>
@@ -75,22 +87,33 @@ const ReferralWarning = () => {
 
                         {/* Solution Side */}
                         <motion.div
-                            initial={{ opacity: 0, x: 20 }}
+                            initial={{ opacity: 0, x: 40 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-depth"
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
+                            whileHover={{ y: -4 }}
+                            className="
+                                p-6 md:p-10 
+                                bg-card 
+                                border border-border 
+                                rounded-xl 
+                                flex flex-col 
+                                h-full 
+                                hover:border-primary/60 
+                                hover:shadow-[0_0_20px_rgba(0,102,255,0.15)] 
+                                transition-all 
+                                duration-300
+                            "
                         >
                             <div className="flex items-start gap-4 mb-6">
-                                <div className="flex-shrink-0">
-                                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                                        <Target className="w-6 h-6 text-primary" />
-                                    </div>
+                                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                    <Target className="w-6 h-6 text-primary" />
                                 </div>
                                 <h3 className="text-2xl font-bold">
                                     How We Create Controllable Pipeline
                                 </h3>
                             </div>
+
                             <ul className="space-y-4 mb-6">
                                 <li className="flex items-start gap-3">
                                     <Zap className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -109,7 +132,8 @@ const ReferralWarning = () => {
                                     <span className="text-lg text-muted-foreground">Create a <strong className="text-foreground">controllable, scalable pipeline</strong> they fully own.</span>
                                 </li>
                             </ul>
-                            <div className="pt-6 border-t border-border">
+
+                            <div className="pt-6 border-t border-border mt-auto">
                                 <p className="text-lg font-semibold text-primary">
                                     Transform unpredictable referrals into a controllable B2B lead generation system.
                                 </p>
