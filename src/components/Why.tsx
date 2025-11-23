@@ -20,7 +20,7 @@ const advantages = [
   {
     icon: Target,
     title: "Dedicated Team",
-    description: "Team of 4 – no junior delivery, no diluted quality",
+    description: "A dedicated team that does not work with your competitors. YOU stay priority. We prioritise quality and results over quantity.",
   },
 ];
 
