@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { TrendingDown, TrendingUp, Target, Building2 } from "lucide-react";
+import {
+  LineChart,
+  Rocket,
+  Network,
+  Briefcase,
+} from "lucide-react";
 
 const clientTypes = [
   {
@@ -24,22 +30,22 @@ const clientTypes = [
 
 const industries = [
   {
-    icon: Building2,
+    icon: LineChart,
     title: "PE/VC-Backed Companies",
     description: "Portfolio companies under growth pressure needing rapid revenue optimization",
   },
   {
-    icon: Building2,
+    icon: Rocket,
     title: "Scale-Ups",
     description: "Companies with unpredictable or inefficient pipeline looking for systematic growth",
   },
   {
-    icon: Building2,
+    icon: Network,
     title: "Enterprise Teams",
     description: "Organizations tired of high data bills for low conversion rates",
   },
   {
-    icon: Building2,
+    icon: Briefcase,
     title: "Professional Services",
     description: "RegTech, FinTech SaaS, Enterprise B2B Technology providers",
   },
