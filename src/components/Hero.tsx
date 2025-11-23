@@ -1,8 +1,32 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, LinkedinIcon } from "lucide-react";
+// Added Square and Crown icons for placeholders
+import { ArrowRight, LinkedinIcon, SquareIcon, Crown, Briefcase } from "lucide-react";
 
 const Hero = () => {
+  const credibilityLogos = [
+    {
+      id: 1,
+      title: "Chartered Accountant (ACCA)",
+      icon: Briefcase,
+    },
+    {
+      id: 2,
+      title: 'DM "INTEL" on LinkedIn',
+      icon: LinkedinIcon,
+    },
+    {
+      id: 3,
+      title: "Technology Partner (Clay/HubSpot)",
+      icon: SquareIcon, // Placeholder for Clay/HubSpot badge
+    },
+    {
+      id: 4,
+      title: "UK Government Tender Monitoring",
+      icon: Crown,
+    },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
@@ -169,9 +193,41 @@ const Hero = () => {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* --- CREDIBILITY BAR (REVISED: FLOATING ROW) --- */}
+          <div className="mt-12 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.2, duration: 0.8 }}
+              className="py-3 px-6 md:px-10 inline-flex items-center justify-center rounded-full bg-background/30 backdrop-blur-md border border-border/50 shadow-lg"
+            >
+              <div className="flex items-center justify-center space-x-6 md:space-x-8">
+                <span className="text-xs font-medium text-steel/70 hidden sm:block">
+                  As seen in / Powered by:
+                </span>
+                {credibilityLogos.map((logo, index) => {
+                  const IconComponent = logo.icon;
+                  return (
+                    <motion.div
+                      key={logo.id}
+                      title={logo.title}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 2.4 + index * 0.1, duration: 0.4 }}
+                      className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
+                    >
+                      <IconComponent className="w-5 h-5 text-primary/80 md:w-6 md:h-6" />
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </div>
+          {/* ------------------------------------------- */}
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Moved outside the main motion.div for better visual placement */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
