@@ -1,31 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-// Added Square and Crown icons for placeholders
-import { ArrowRight, LinkedinIcon, SquareIcon, Crown, Briefcase } from "lucide-react";
+import { ArrowRight, LinkedinIcon } from "lucide-react";
+
+// Note: Removed unused icons (SquareIcon, Crown, Briefcase) as we will use <img> tags.
 
 const Hero = () => {
-  const credibilityLogos = [
-    {
-      id: 1,
-      title: "Chartered Accountant (ACCA)",
-      icon: Briefcase,
-    },
-    {
-      id: 2,
-      title: 'DM "INTEL" on LinkedIn',
-      icon: LinkedinIcon,
-    },
-    {
-      id: 3,
-      title: "Technology Partner (Clay/HubSpot)",
-      icon: SquareIcon, // Placeholder for Clay/HubSpot badge
-    },
-    {
-      id: 4,
-      title: "UK Government Tender Monitoring",
-      icon: Crown,
-    },
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -194,7 +173,7 @@ const Hero = () => {
             ))}
           </motion.div>
 
-          {/* --- CREDIBILITY BAR (REVISED: FLOATING ROW) --- */}
+          {/* --- CREDIBILITY BAR (REVISED with IMG tags for actual logos) --- */}
           <div className="mt-12 w-full">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -206,21 +185,46 @@ const Hero = () => {
                 <span className="text-xs font-medium text-steel/70 hidden sm:block">
                   As seen in / Powered by:
                 </span>
-                {credibilityLogos.map((logo, index) => {
-                  const IconComponent = logo.icon;
-                  return (
-                    <motion.div
-                      key={logo.id}
-                      title={logo.title}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 2.4 + index * 0.1, duration: 0.4 }}
-                      className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
-                    >
-                      <IconComponent className="w-5 h-5 text-primary/80 md:w-6 md:h-6" />
-                    </motion.div>
-                  );
-                })}
+                
+                {/* 1. Chartered Accountant ACCA logo */}
+                <motion.img 
+                  src="/logos/acca-logo.png" // <--- Update this path
+                  alt="ACCA Chartered Accountant"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.4, duration: 0.4 }}
+                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
+                />
+
+                {/* 2. LinkedIn logo (DM "Intel") - Using the Lucide icon for simplicity here, as it's just a visual cue */}
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.5, duration: 0.4 }}
+                    className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
+                >
+                    <LinkedinIcon className="w-5 h-5 text-primary/80 md:w-6 md:h-6" />
+                </motion.div>
+                
+                {/* 3. HubSpot partner badge or Clay logo */}
+                <motion.img 
+                  src="/logos/clay-hubspot-logo.png" // <--- Update this path
+                  alt="Tech Partner Logo (Clay/HubSpot)"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.6, duration: 0.4 }}
+                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
+                />
+
+                {/* 4. UK Government Crown logo */}
+                <motion.img 
+                  src="/logos/uk-crown-logo.svg" // <--- Update this path
+                  alt="UK Government Crown"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.7, duration: 0.4 }}
+                  className="w-auto h-6 opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             </motion.div>
           </div>
