@@ -15,7 +15,7 @@ const valueProps = [
   {
     icon: TrendingUp,
     title: "We Increase Win Rates",
-    description: "Understanding market gaps competitors are missing gives you positioning advantages in competitive deals.",
+    description: "Understanding market gaps competitors are missing gives you decisive positioning advantages in competitive deals. You enter conversations with evidence, not assumptions.",
   },
   {
     icon: Database,
