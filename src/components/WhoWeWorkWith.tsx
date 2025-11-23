@@ -10,7 +10,7 @@ const clientTypes = [
   },
   {
     icon: TrendingUp,
-    title: "Unsustainable Scaling (Optimization)",
+    title: "Unsustainable Scaling (Optimisation)",
     description: "You're growing but burning cash. CAC is climbing. Deal cycles are lengthening. You're not sure which accounts are actually worth pursuing.",
     solution: "We validate your ICP with data, identify efficiency gaps, and engineer systems that scale profitably.",
   },
