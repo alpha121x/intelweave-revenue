@@ -14,17 +14,20 @@ const solutions = [
   {
     icon: TrendingUp,
     title: "Business Model Deep-Dive (Chartered Accountant DNA)",
-    description: "We analyse prospects the way we once audited FTSE 100 & Fortune 500 balance sheets: revenue structures, cost dynamics, cash flow, unit economics. This is why our targeting and messaging convert materially higher.",
+    description:
+      "We analyse prospects the way we once audited FTSE 100 & Fortune 500 balance sheets: revenue structures, cost dynamics, cash flow, unit economics. This is why our targeting and messaging convert materially higher.\n\nWe identify which markets, industries, and geographies offer the fastest path to scalable revenue.",
   },
   {
     icon: Users,
     title: "Hidden ICP Discovery",
-    description: "Triangulating firmographics + technographics + intent data to surface the accounts that actually buy.",
+    description:
+      "Triangulating firmographics + technographics + intent data to surface the accounts that actually buy.",
   },
   {
     icon: MessageSquare,
     title: "Pain Point-Led Messaging",
-    description: "First outreach reads like internal intelligence because it's built on research competitors haven't done.",
+    description:
+      "First outreach reads like internal intelligence because it's built on research competitors haven't done.",
   },
   {
     icon: Zap,
@@ -53,7 +56,9 @@ const Solution = () => {
           <div className="mb-16 text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
               <Zap className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Our Methodology</span>
+              <span className="text-sm font-medium text-primary">
+                Our Methodology
+              </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
               We Don't Generate Leads.{" "}
@@ -93,7 +98,10 @@ const Solution = () => {
                     {solution.points && (
                       <ul className="space-y-3 mt-4">
                         {solution.points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-start gap-3">
+                          <li
+                            key={pointIndex}
+                            className="flex items-start gap-3"
+                          >
                             <span className="text-primary mt-1">•</span>
                             <span className="text-lg text-steel">{point}</span>
                           </li>
