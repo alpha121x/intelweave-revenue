@@ -193,7 +193,7 @@ const Hero = () => {
                 </span>
 
                 <div className="flex items-center gap-8 md:gap-12">
-                  {/* 1. ACCA – square-ish, normal size */}
+                  {/* 1. ACCA – Applying glow to the red/dark logo */}
                   <motion.img
                     src="/logos/acca-logo.jpeg"
                     alt="ACCA"
@@ -201,9 +201,13 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2.4 }}
                     className="h-11 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    style={{
+                      filter:
+                        "drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))", // White/light glow
+                    }}
                   />
 
-                  {/* 2. LinkedIn – very small/narrow → boost it */}
+                  {/* 2. LinkedIn – already bright, no major glow needed */}
                   <motion.img
                     src="/logos/linkedin-logo.png"
                     alt="LinkedIn"
@@ -211,10 +215,10 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2.5 }}
                     className="h-12 w-12 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    style={{ minWidth: "44px" }} // forces consistent clickable area
+                    style={{ minWidth: "44px" }}
                   />
 
-                  {/* 3. Clay – already bold, slight bump */}
+                  {/* 3. Clay – Applying glow to the dark text 'clay' */}
                   <motion.img
                     src="/logos/clay-logo.png"
                     alt="Clay"
@@ -222,19 +226,25 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2.6 }}
                     className="h-14 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    style={{
+                      filter:
+                        "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))", // White/light glow
+                    }}
                   />
 
-                  {/* 4. HubSpot – naturally tall, give it room */}
+                  {/* 4. HubSpot – Applying glow to the dark text/sprocket outline */}
                   <motion.img
                     src="/logos/hubspot-logo.png"
                     alt="HubSpot Certified Partner"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2.7 }}
-                    className="h-12 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    className="h-12 w-auto transition-all duration-300 hover:scale-110"
+                    // opacity-80 and hover:opacity-100 removed from className
+                    // style attribute (glow filter) removed entirely
                   />
 
-                  {/* 5. UK Government Crown – tiny icon → make it proud */}
+                  {/* 5. UK Government Crown – Already bright white, enhancing the glow */}
                   <motion.img
                     src="/logos/uk-logo.png"
                     alt="UK Government"
@@ -242,7 +252,11 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 2.8 }}
                     className="h-14 w-14 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    style={{ minWidth: "52px" }}
+                    style={{
+                      minWidth: "52px",
+                      filter:
+                        "drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5))", // Stronger white glow
+                    }}
                   />
                 </div>
               </div>
