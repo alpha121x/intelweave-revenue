@@ -39,21 +39,21 @@ const Problem = () => {
           className="max-w-5xl mx-auto"
         >
           {/* Section header */}
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <AlertCircle className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">The Reality</span>
+          <div className="mb-12 md:mb-16 text-center px-2">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-4 md:mb-6">
+              <AlertCircle className="w-3 h-3 md:w-4 md:h-4 text-primary flex-shrink-0" />
+              <span className="text-xs md:text-sm font-medium text-primary">The Reality</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-balance">
               Your Competitors Aren't Winning Because They Work Harder
             </h2>
-            <p className="text-2xl text-steel font-medium">
+            <p className="text-lg md:text-2xl text-steel font-medium text-balance">
               They Know Exactly Where to Look
             </p>
           </div>
 
           {/* Problem grid */}
-          <div className="grid gap-4">
+          <div className="grid gap-3 md:gap-4 px-2">
             {problems.map((problem, index) => (
               <motion.div
                 key={index}
@@ -61,20 +61,20 @@ const Problem = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative p-6 bg-gradient-surface border border-border rounded-lg hover:border-primary/50 transition-all duration-300"
+                className="group relative p-4 md:p-6 bg-gradient-surface border border-border rounded-lg hover:border-primary/50 transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3 md:gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-2 h-2 rounded-full bg-primary mt-2" />
+                    <div className="w-2 h-2 rounded-full bg-primary mt-1.5" />
                   </div>
                   <div className="flex-grow">
-                    <p className="text-lg text-foreground leading-relaxed">
+                    <p className="text-sm md:text-lg text-foreground leading-relaxed">
                       {problem.description}
                     </p>
                   </div>
                   {problem.stat && (
                     <div className="flex-shrink-0 text-right">
-                      <span className="text-2xl font-bold text-primary">{problem.stat}</span>
+                      <span className="text-base md:text-2xl font-bold text-primary whitespace-nowrap ml-2">{problem.stat}</span>
                     </div>
                   )}
                 </div>

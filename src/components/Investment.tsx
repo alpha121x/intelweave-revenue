@@ -69,7 +69,7 @@ const Investment = () => {
           </div>
 
           {/* Pricing tiers */}
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {tiers.map((tier, index) => (
               <motion.div
                 key={index}
@@ -77,9 +77,9 @@ const Investment = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`relative p-8 rounded-xl border transition-all duration-300 ${
+                className={`relative p-4 md:p-8 rounded-xl border transition-all duration-300 ${
                   tier.highlighted
-                    ? "bg-gradient-accent border-primary shadow-surgical scale-105"
+                    ? "bg-gradient-accent border-primary shadow-surgical md:scale-105"
                     : "bg-card border-border hover:border-primary/50"
                 }`}
               >
@@ -91,21 +91,21 @@ const Investment = () => {
                   </div>
                 )}
 
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                <div className="mb-4 md:mb-6">
+                  <h3 className="text-lg md:text-2xl font-bold mb-1 md:mb-2">{tier.name}</h3>
                   <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl font-bold text-primary">{tier.price}</span>
-                    {tier.price.includes("£") && <span className="text-steel">one-time</span>}
+                    <span className="text-2xl md:text-4xl font-bold text-primary">{tier.price}</span>
+                    {tier.price.includes("£") && <span className="text-xs md:text-base text-steel">one-time</span>}
                   </div>
-                  <p className="text-steel mb-4">{tier.duration}</p>
-                  <p className="text-foreground leading-relaxed">{tier.description}</p>
+                  <p className="text-xs md:text-base text-steel mb-2 md:mb-4">{tier.duration}</p>
+                  <p className="text-xs md:text-base text-foreground leading-relaxed">{tier.description}</p>
                 </div>
 
-                <ul className="space-y-4 mb-8">
+                <ul className="space-y-2 md:space-y-4 mb-6 md:mb-8">
                   {tier.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-steel">{feature}</span>
+                      <Check className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-xs md:text-base text-steel">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -126,10 +126,10 @@ const Investment = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-16 p-8 bg-card border border-border rounded-xl"
+            className="mt-12 md:mt-16 p-4 md:p-8 bg-card border border-border rounded-xl"
           >
-            <h3 className="text-2xl font-bold mb-6 text-center">Clients typically see:</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <h3 className="text-lg md:text-2xl font-bold mb-4 md:mb-6 text-center">Clients typically see:</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 "Dramatically lower cost per qualified opportunity",
                 "Shorter sales cycles (prospects self-qualify faster)",
@@ -137,8 +137,8 @@ const Investment = () => {
                 "Owned intelligence systems that keep working long after we're gone",
               ].map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                  <p className="text-steel">{benefit}</p>
+                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-1.5" />
+                  <p className="text-xs md:text-base text-steel">{benefit}</p>
                 </div>
               ))}
             </div>

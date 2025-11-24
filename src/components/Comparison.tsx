@@ -48,20 +48,20 @@ const Comparison = () => {
 
           {/* Comparison table */}
           <div className="overflow-hidden rounded-xl border border-border bg-card">
-            {/* Header */}
-            <div className="grid grid-cols-2 gap-px bg-border">
-              <div className="bg-secondary/50 px-8 py-6">
-                <div className="flex items-center gap-3">
-                  <X className="w-5 h-5 text-muted-foreground" />
-                  <h3 className="text-xl font-bold text-muted-foreground">
+            {/* Header - Hidden on mobile */}
+            <div className="hidden md:grid grid-cols-2 gap-px bg-border">
+              <div className="bg-secondary/50 px-4 md:px-8 py-4 md:py-6">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <X className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground flex-shrink-0" />
+                  <h3 className="text-sm md:text-xl font-bold text-muted-foreground">
                     The Old World (Most Agencies)
                   </h3>
                 </div>
               </div>
-              <div className="bg-gradient-accent px-8 py-6">
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-primary" />
-                  <h3 className="text-xl font-bold text-foreground">
+              <div className="bg-gradient-accent px-4 md:px-8 py-4 md:py-6">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Check className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0" />
+                  <h3 className="text-sm md:text-xl font-bold text-foreground">
                     The GTM Outbound Services Way
                   </h3>
                 </div>
@@ -77,13 +77,19 @@ const Comparison = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="grid grid-cols-2 gap-px bg-border"
+                  className="grid md:grid-cols-2 gap-px bg-border"
                 >
-                  <div className="bg-card px-8 py-6">
-                    <p className="text-muted-foreground">{comparison.old}</p>
+                  <div className="bg-card px-4 md:px-8 py-4 md:py-6">
+                    <p className="text-xs md:text-base text-muted-foreground">
+                      <span className="md:hidden text-primary font-semibold">Old: </span>
+                      {comparison.old}
+                    </p>
                   </div>
-                  <div className="bg-card px-8 py-6 border-l-2 border-primary/50">
-                    <p className="text-foreground font-medium">{comparison.new}</p>
+                  <div className="bg-card px-4 md:px-8 py-4 md:py-6 md:border-l-2 border-primary/50">
+                    <p className="text-xs md:text-base text-foreground font-medium">
+                      <span className="md:hidden text-primary font-semibold">New: </span>
+                      {comparison.new}
+                    </p>
                   </div>
                 </motion.div>
               ))}

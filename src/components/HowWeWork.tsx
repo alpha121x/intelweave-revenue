@@ -65,7 +65,7 @@ const HowWeWork = () => {
           </div>
 
           {/* Phases */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {phases.map((phase, index) => (
               <motion.div
                 key={index}
@@ -75,29 +75,29 @@ const HowWeWork = () => {
                 transition={{ delay: index * 0.15 }}
                 className="relative"
               >
-                {/* Connector line */}
+                {/* Connector line - hidden on mobile */}
                 {index < phases.length - 1 && (
-                  <div className="absolute left-[52px] top-[80px] bottom-[-32px] w-0.5 bg-gradient-to-b from-primary to-transparent" />
+                  <div className="hidden md:block absolute left-10 lg:left-[52px] top-20 md:top-24 bottom-[-32px] w-0.5 bg-gradient-to-b from-primary to-transparent" />
                 )}
-                
-                <div className="group p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-depth">
-                  <div className="flex items-start gap-6">
+
+                <div className="group p-4 md:p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-depth">
+                  <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6">
                     <div className="flex-shrink-0 relative z-10">
-                      <div className="w-20 h-20 rounded-xl bg-gradient-accent border-2 border-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <phase.icon className="w-10 h-10 text-primary" />
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-gradient-accent border-2 border-primary flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <phase.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                       </div>
                     </div>
                     <div className="flex-grow">
-                      <div className="mb-4">
-                        <div className="text-sm font-semibold text-primary mb-2">{phase.number}</div>
-                        <h3 className="text-3xl font-bold mb-3">{phase.title}</h3>
-                        <p className="text-xl text-steel mb-6">{phase.description}</p>
+                      <div className="mb-3 md:mb-4">
+                        <div className="text-xs md:text-sm font-semibold text-primary mb-1 md:mb-2">{phase.number}</div>
+                        <h3 className="text-xl md:text-3xl font-bold mb-2 md:mb-3">{phase.title}</h3>
+                        <p className="text-base md:text-xl text-steel mb-4 md:mb-6">{phase.description}</p>
                       </div>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2 md:space-y-3">
                         {phase.items.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2" />
-                            <span className="text-steel leading-relaxed">{item}</span>
+                            <span className="text-sm md:text-base text-steel leading-relaxed">{item}</span>
                           </li>
                         ))}
                       </ul>
