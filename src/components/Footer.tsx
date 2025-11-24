@@ -25,8 +25,7 @@ const Footer: FC = () => {
                 GTM Outbound Services
               </h3>
               <p className="text-sm sm:text-base text-steel leading-relaxed">
-                Revenue systems engineering led by a Chartered Accountant with
-                FTSE 100 & Fortune 500 experience.
+                Revenue systems engineering led by a Chartered Accountant with global experience – bringing forensic commercial insight to every project.
               </p>
             </div>
 
