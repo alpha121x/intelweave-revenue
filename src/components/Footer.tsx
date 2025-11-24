@@ -1,10 +1,11 @@
+import { FC } from "react";
 import { motion } from "framer-motion";
 import { LinkedinIcon, Mail, Phone } from "lucide-react";
 
-const Footer = () => {
+const Footer: FC = () => {
   return (
     <footer className="relative py-12 bg-navy-deep border-t border-border">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -14,56 +15,35 @@ const Footer = () => {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8"
           >
             {/* Company info */}
-            <div>
+            <div className="flex flex-col items-start sm:items-start">
               <img
                 src="/logoo.png"
                 alt="GTM Outbound Services Logo"
-                className="h-32 md:h-36 lg:h-40 object-contain mb-6"
+                className="h-24 sm:h-32 md:h-36 lg:h-40 object-contain mb-4 sm:mb-6"
               />
-
-              {/* <h3 className="text-xl font-bold mb-4">GTM Outbound Services</h3> */}
-              {/* <p className="text-steel leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+                GTM Outbound Services
+              </h3>
+              <p className="text-sm sm:text-base text-steel leading-relaxed">
                 Revenue systems engineering led by a Chartered Accountant with
                 FTSE 100 & Fortune 500 experience.
-              </p> */}
+              </p>
             </div>
 
             {/* Services */}
             <div>
               <h4 className="text-lg font-bold mb-4">Services</h4>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    Revenue Diagnostic
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    Pilot Engagement
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    Full Revenue System
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    Market Intelligence
-                  </a>
-                </li>
+                {["Revenue Diagnostic", "Pilot Engagement", "Full Revenue System", "Market Intelligence"].map((service, i) => (
+                  <li key={i}>
+                    <a
+                      href="#"
+                      className="text-steel hover:text-primary transition-colors"
+                    >
+                      {service}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -71,38 +51,16 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-bold mb-4">Industries</h4>
               <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    Professional Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    RegTech & Compliance
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    FinTech SaaS
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-steel hover:text-primary transition-colors"
-                  >
-                    PE/VC-Backed
-                  </a>
-                </li>
+                {["Professional Services", "RegTech & Compliance", "FinTech SaaS", "PE/VC-Backed"].map((industry, i) => (
+                  <li key={i}>
+                    <a
+                      href="#"
+                      className="text-steel hover:text-primary transition-colors"
+                    >
+                      {industry}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -143,12 +101,11 @@ const Footer = () => {
 
           {/* Bottom bar */}
           <div className="pt-8 border-t border-border">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} GTM Outbound Services. All rights
-                reserved.
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-sm text-muted-foreground text-center sm:text-left">
+                © {new Date().getFullYear()} GTM Outbound Services. All rights reserved.
               </p>
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
                 <a
                   href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
