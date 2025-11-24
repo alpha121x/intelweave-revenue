@@ -378,22 +378,13 @@ const Hero = () => {
             ))}
           </motion.div>
 
-          {/* --- CREDIBILITY BAR (Enhanced with dramatic entrance and hover effects) --- */}
-          <div className="mt-14 w-full">
+          {/* --- CREDIBILITY BAR (With shimmer light effect) --- */}
+          <div className="mt-12 w-full">
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ 
-                delay: 2.6, 
-                duration: 1,
-                type: "spring",
-                stiffness: 100
-              }}
-              whileHover={{ scale: 1.02 }}
-              className="py-8 px-10 md:px-16 inline-flex items-center justify-center rounded-2xl bg-card/60 backdrop-blur-xl border-2 border-primary/20 shadow-2xl mx-auto relative overflow-hidden group"
-              style={{
-                boxShadow: '0 0 60px hsl(186 65% 42% / 0.15), 0 20px 40px hsl(220 20% 5% / 0.4)'
-              }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.2, duration: 0.8 }}
+              className="py-6 px-10 md:px-14 inline-flex items-center justify-center rounded-full bg-background/40 backdrop-blur-xl border border-border/70 shadow-2xl mx-auto relative overflow-hidden"
             >
               {/* Animated background shimmer */}
               <motion.div
@@ -409,80 +400,74 @@ const Hero = () => {
                 }}
               />
               
-              <div className="flex items-center gap-12 md:gap-16 flex-wrap justify-center relative z-10">
-                {/* Label with subtle pulse */}
-                <motion.span 
-                  className="text-sm font-medium text-muted-foreground whitespace-nowrap hidden sm:block"
-                  animate={{ opacity: [0.6, 1, 0.6] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
+              <div className="flex items-center gap-10 md:gap-16 flex-wrap justify-center relative z-10">
+                {/* Label */}
+                <span className="text-sm font-medium text-muted-foreground/70 whitespace-nowrap hidden sm:block">
                   As seen in / Powered by:
-                </motion.span>
+                </span>
 
-                <div className="flex items-center gap-10 md:gap-14">
-                  {/* 1. ACCA */}
+                <div className="flex items-center gap-8 md:gap-12">
+                  {/* 1. ACCA – Applying glow to the red/dark logo */}
                   <motion.img
                     src="/logos/acca-logo.jpeg"
                     alt="ACCA"
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: 2.8, type: "spring" }}
-                    whileHover={{ scale: 1.15, y: -4 }}
-                    className="h-12 w-auto opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.4 }}
+                    className="h-11 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
                     style={{
-                      filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.3))"
+                      filter:
+                        "drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))",
                     }}
                   />
 
-                  {/* 2. LinkedIn */}
+                  {/* 2. LinkedIn – already bright, no major glow needed */}
                   <motion.img
                     src="/logos/linkedin-logo.png"
                     alt="LinkedIn"
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: 2.9, type: "spring" }}
-                    whileHover={{ scale: 1.15, y: -4, rotate: 5 }}
-                    className="h-14 w-14 opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                    style={{ minWidth: "48px" }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.5 }}
+                    className="h-12 w-12 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+                    style={{ minWidth: "44px" }}
                   />
 
-                  {/* 3. Clay */}
+                  {/* 3. Clay – Applying glow to the dark text 'clay' */}
                   <motion.img
                     src="/logos/clay-logo.png"
                     alt="Clay"
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: 3.0, type: "spring" }}
-                    whileHover={{ scale: 1.15, y: -4 }}
-                    className="h-16 w-auto opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.6 }}
+                    className="h-14 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
                     style={{
-                      filter: "drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))"
+                      filter:
+                        "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))",
                     }}
                   />
 
-                  {/* 4. HubSpot */}
+                  {/* 4. HubSpot – Applying glow to the dark text/sprocket outline */}
                   <motion.img
                     src="/logos/hubspot-logo.png"
                     alt="HubSpot Certified Partner"
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: 3.1, type: "spring" }}
-                    whileHover={{ scale: 1.15, y: -4 }}
-                    className="h-13 w-auto transition-all duration-300 cursor-pointer hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.7 }}
+                    className="h-12 w-auto transition-all duration-300 hover:scale-110"
                   />
 
-                  {/* 5. UK Government Crown */}
+                  {/* 5. UK Government Crown – Already bright white, enhancing the glow */}
                   <motion.img
                     src="/logos/uk-logo.png"
                     alt="UK Government"
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: 3.2, type: "spring" }}
-                    whileHover={{ scale: 1.15, y: -4, rotate: -5 }}
-                    className="h-16 w-16 opacity-85 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 2.8 }}
+                    className="h-14 w-14 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
                     style={{
-                      minWidth: "56px",
-                      filter: "drop-shadow(0 0 12px rgba(255, 255, 255, 0.6))"
+                      minWidth: "52px",
+                      filter:
+                        "drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5))",
                     }}
                   />
                 </div>
