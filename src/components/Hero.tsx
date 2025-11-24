@@ -268,97 +268,97 @@ const Hero = () => {
             No bought lists. No spray-and-pray. No hope marketing.
           </motion.p>
 
-         {/* CTA buttons with enhanced animations and glow effects */}
-{/* CTA buttons with enhanced animations and glow effects */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{
-    delay: 1.8,
-    duration: 0.8,
-    ease: [0.34, 1.56, 0.64, 1],
-  }}
-  className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
->
-  {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
-  <motion.div
-    whileHover={{ scale: 1.08, y: -2 }}
-    whileTap={{ scale: 0.97 }}
-    animate={{
-      boxShadow: [
-        "0 0 0px hsl(186 65% 42% / 0)",
-        "0 0 30px hsl(186 65% 42% / 0.4)",
-        "0 0 0px hsl(186 65% 42% / 0)",
-      ],
-    }}
-    transition={{
-      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-    }}
-    // Ensures full width on mobile/small tablets
-    className="rounded-full w-full md:w-auto" 
-  >
-    <Button
-      variant="surgical"
-      size="xl"
-      // Mobile style classes for size and padding
-      className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
-    >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-        animate={{
-          x: ["-100%", "200%"],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "linear",
-          repeatDelay: 1,
-        }}
-      />
-      <span className="relative z-10">
-        Book a 15-Minute Intelligence Audit
-      </span>
-      <ArrowRight className="ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
-    </Button>
-  </motion.div>
+          {/* CTA buttons with enhanced animations and glow effects */}
+          {/* CTA buttons with enhanced animations and glow effects */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 1.8,
+              duration: 0.8,
+              ease: [0.34, 1.56, 0.64, 1],
+            }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
+          >
+            {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
+            <motion.div
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              animate={{
+                boxShadow: [
+                  "0 0 0px hsl(186 65% 42% / 0)",
+                  "0 0 30px hsl(186 65% 42% / 0.4)",
+                  "0 0 0px hsl(186 65% 42% / 0)",
+                ],
+              }}
+              transition={{
+                boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              }}
+              // Ensures full width on mobile/small tablets
+              className="rounded-full w-full md:w-auto"
+            >
+              <Button
+                variant="surgical"
+                size="xl"
+                // Mobile style classes for size and padding
+                className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  animate={{
+                    x: ["-100%", "200%"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatDelay: 1,
+                  }}
+                />
+                <span className="relative z-10">
+                  Book a 15-Minute Intelligence Audit
+                </span>
+                <ArrowRight className="ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
 
-  {/* SECOND BUTTON (DM "INTEL" on LinkedIn) */}
-  <motion.div
-    whileHover={{ scale: 1.08, y: -2 }}
-    whileTap={{ scale: 0.97 }}
-    // Ensures full width on mobile/small tablets
-    className="w-full md:w-auto" 
-  >
-    <a
-      href="https://www.linkedin.com/company/gtmoutboundservices/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Button
-        variant="intelligence"
-        size="xl"
-        // Mobile style classes for size and padding
-        className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
-      >
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
-          animate={{
-            x: ["-100%", "200%"],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "linear",
-            repeatDelay: 1,
-            delay: 0.5,
-          }}
-        />
-        <LinkedinIcon className="mr-2 relative z-10 w-5 h-5" />{" "}
-        <span className="relative z-10">DM "INTEL" on LinkedIn</span>
-      </Button>
-    </a>
-  </motion.div>
-</motion.div>
+            {/* SECOND BUTTON (DM "INTEL" on LinkedIn) */}
+            <motion.div
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              // Ensures full width on mobile/small tablets
+              className="w-full md:w-auto"
+            >
+              <a
+                href="https://www.linkedin.com/company/gtmoutboundservices/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="intelligence"
+                  size="xl"
+                  // Mobile style classes for size and padding
+                  className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
+                    animate={{
+                      x: ["-100%", "200%"],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                      repeatDelay: 1,
+                      delay: 0.5,
+                    }}
+                  />
+                  <LinkedinIcon className="mr-2 relative z-10 w-5 h-5" />{" "}
+                  <span className="relative z-10">DM "INTEL" on LinkedIn</span>
+                </Button>
+              </a>
+            </motion.div>
+          </motion.div>
           {/* Trust indicators with enhanced staggered animations and pulse effects */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
