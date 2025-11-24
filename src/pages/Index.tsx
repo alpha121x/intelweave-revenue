@@ -12,10 +12,12 @@ import Testimonials from "@/components/Testimonials";
 import Investment from "@/components/Investment";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <Navbar />
       <Hero />
       <Problem />
       <Solution />
