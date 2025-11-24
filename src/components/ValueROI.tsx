@@ -26,8 +26,8 @@ const valueProps = [
 
 const ValueROI = () => {
   return (
-    <section className="relative py-24 bg-gradient-primary">
-      <div className="container mx-auto px-6">
+    <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-primary">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,17 +36,17 @@ const ValueROI = () => {
           className="max-w-6xl mx-auto"
         >
           {/* Section header */}
-          <div className="mb-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+          <div className="mb-12 sm:mb-16 text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance">
               Value & ROI
             </h2>
-            <p className="text-xl text-steel max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-steel max-w-3xl mx-auto">
               Why Our Approach Delivers Material Returns
             </p>
           </div>
 
           {/* Value props grid */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {valueProps.map((prop, index) => (
               <motion.div
                 key={index}
@@ -54,17 +54,17 @@ const ValueROI = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-depth"
+                className="group p-4 sm:p-6 md:p-8 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 hover:shadow-depth"
               >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <prop.icon className="w-6 h-6 text-primary" />
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+                  <div className="flex-shrink-0 mb-3 sm:mb-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <prop.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-xl font-bold mb-3">{prop.title}</h3>
-                    <p className="text-steel leading-relaxed">{prop.description}</p>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3">{prop.title}</h3>
+                    <p className="text-xs sm:text-sm md:text-base text-steel leading-relaxed">{prop.description}</p>
                   </div>
                 </div>
               </motion.div>
