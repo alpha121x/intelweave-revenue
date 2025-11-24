@@ -379,101 +379,102 @@ const Hero = () => {
           </motion.div>
 
           {/* --- CREDIBILITY BAR (With shimmer light effect) --- */}
-          <div className="mt-12 w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.2, duration: 0.8 }}
-              className="py-6 px-10 md:px-14 inline-flex items-center justify-center rounded-full bg-background/40 backdrop-blur-xl border border-border/70 shadow-2xl mx-auto relative overflow-hidden"
-            >
-              {/* Animated background shimmer */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"
-                animate={{
-                  x: ['-200%', '200%']
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "linear",
-                  repeatDelay: 2
-                }}
-              />
-              
-              <div className="flex items-center gap-10 md:gap-16 flex-wrap justify-center relative z-10">
-                {/* Label */}
-                <span className="text-sm font-medium text-muted-foreground/70 whitespace-nowrap hidden sm:block">
-                  As seen in / Powered by:
-                </span>
+<div className="mt-12 w-full">
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 2.2, duration: 0.8 }}
+    className="py-6 px-6 md:px-14 inline-flex items-center justify-center rounded-full bg-background/40 backdrop-blur-xl border border-border/70 shadow-2xl mx-auto relative overflow-hidden"
+  >
+    {/* Animated background shimmer */}
+    <motion.div
+      className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"
+      animate={{ x: ['-200%', '200%'] }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear",
+        repeatDelay: 2
+      }}
+    />
 
-                <div className="flex items-center gap-8 md:gap-12">
-                  {/* 1. ACCA – Applying glow to the red/dark logo */}
-                  <motion.img
-                    src="/logos/acca-logo.jpeg"
-                    alt="ACCA"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.4 }}
-                    className="h-11 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    style={{
-                      filter:
-                        "drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))",
-                    }}
-                  />
+    <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 relative z-10">
 
-                  {/* 2. LinkedIn – already bright, no major glow needed */}
-                  <motion.img
-                    src="/logos/linkedin-logo.png"
-                    alt="LinkedIn"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.5 }}
-                    className="h-12 w-12 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    style={{ minWidth: "44px" }}
-                  />
+      {/* Label - hidden on mobile */}
+      <span className="text-xs sm:text-sm font-medium text-muted-foreground/70 whitespace-nowrap hidden sm:block">
+        As seen in / Powered by:
+      </span>
 
-                  {/* 3. Clay – Applying glow to the dark text 'clay' */}
-                  <motion.img
-                    src="/logos/clay-logo.png"
-                    alt="Clay"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.6 }}
-                    className="h-14 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    style={{
-                      filter:
-                        "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))",
-                    }}
-                  />
+      {/* Logos */}
+      <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+        
+        {/* ACCA */}
+        <motion.img
+          src="/logos/acca-logo.jpeg"
+          alt="ACCA"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.4 }}
+          className="h-10 sm:h-11 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+          style={{
+            filter:
+              "drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))",
+          }}
+        />
 
-                  {/* 4. HubSpot – Applying glow to the dark text/sprocket outline */}
-                  <motion.img
-                    src="/logos/hubspot-logo.png"
-                    alt="HubSpot Certified Partner"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.7 }}
-                    className="h-12 w-auto transition-all duration-300 hover:scale-110"
-                  />
+        {/* LinkedIn */}
+        <motion.img
+          src="/logos/linkedin-logo.png"
+          alt="LinkedIn"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.5 }}
+          className="h-10 sm:h-12 w-10 sm:w-12 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+        />
 
-                  {/* 5. UK Government Crown – Already bright white, enhancing the glow */}
-                  <motion.img
-                    src="/logos/uk-logo.png"
-                    alt="UK Government"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 2.8 }}
-                    className="h-14 w-14 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    style={{
-                      minWidth: "52px",
-                      filter:
-                        "drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5))",
-                    }}
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </div>
+        {/* Clay */}
+        <motion.img
+          src="/logos/clay-logo.png"
+          alt="Clay"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.6 }}
+          className="h-12 sm:h-14 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+          style={{
+            filter:
+              "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))",
+          }}
+        />
+
+        {/* HubSpot */}
+        <motion.img
+          src="/logos/hubspot-logo.png"
+          alt="HubSpot Certified Partner"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.7 }}
+          className="h-10 sm:h-12 w-auto transition-all duration-300 hover:scale-110"
+        />
+
+        {/* UK Government */}
+        <motion.img
+          src="/logos/uk-logo.png"
+          alt="UK Government"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.8 }}
+          className="h-12 sm:h-14 w-12 sm:w-14 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
+          style={{
+            filter:
+              "drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5))",
+          }}
+        />
+
+      </div>
+    </div>
+  </motion.div>
+</div>
+
           {/* ------------------------------------------- */}
         </motion.div>
 
