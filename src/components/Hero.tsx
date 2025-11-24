@@ -46,9 +46,9 @@ const Hero = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Multiple floating orbs */}
+      {/* Multiple floating orbs (HIDDEN ON SMALL SCREENS) */}
       <motion.div
-        className="absolute top-20 left-10 w-[400px] h-[400px] bg-primary/20 blur-[100px] rounded-full"
+        className="absolute top-20 left-10 w-[400px] h-[400px] bg-primary/20 blur-[100px] rounded-full hidden sm:block"
         animate={{
           x: [0, 100, 0],
           y: [0, -50, 0],
@@ -58,7 +58,7 @@ const Hero = () => {
       />
       
       <motion.div
-        className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-teal-primary/15 blur-[120px] rounded-full"
+        className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-teal-primary/15 blur-[120px] rounded-full hidden sm:block"
         animate={{
           x: [0, -80, 0],
           y: [0, 60, 0],
@@ -68,7 +68,7 @@ const Hero = () => {
       />
 
       <motion.div
-        className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-primary/10 blur-[80px] rounded-full"
+        className="absolute top-1/2 left-1/2 w-[300px] h-[300px] bg-primary/10 blur-[80px] rounded-full hidden sm:block"
         animate={{
           x: [-150, 150, -150],
           y: [-100, 100, -100],
@@ -76,9 +76,9 @@ const Hero = () => {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
-      {/* Spotlight effect following cursor */}
+      {/* Spotlight effect following cursor (HIDDEN ON SMALL SCREENS) */}
       <motion.div
-        className="absolute w-[600px] h-[600px] pointer-events-none"
+        className="absolute w-[600px] h-[600px] pointer-events-none hidden sm:block"
         style={{
           left: spotlightX,
           top: spotlightY,
@@ -88,19 +88,20 @@ const Hero = () => {
         }}
       />
 
-      {/* Geometric accent lines */}
+      {/* Geometric accent lines (HIDDEN ON SMALL SCREENS) */}
       <motion.div
-        className="absolute top-40 right-0 w-px h-64 bg-gradient-to-b from-transparent via-primary/30 to-transparent"
+        className="absolute top-40 right-0 w-px h-64 bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden sm:block"
         animate={{ opacity: [0.2, 0.6, 0.2], scaleY: [0.8, 1, 0.8] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-40 left-0 w-px h-64 bg-gradient-to-b from-transparent via-primary/30 to-transparent"
+        className="absolute bottom-40 left-0 w-px h-64 bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden sm:block"
         animate={{ opacity: [0.2, 0.6, 0.2], scaleY: [0.8, 1, 0.8] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       />
 
-      <div className="container relative z-30 mx-auto px-6 py-20">
+      {/* UPDATED: Reduced padding for mobile (py-16) */}
+      <div className="container relative z-30 mx-auto px-6 py-16 sm:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -220,12 +221,12 @@ const Hero = () => {
             />
           </motion.h1>
 
-          {/* Subheadline with fade-in */}
+          {/* Subheadline with fade-in (UPDATED: Smaller base font size) */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.7, ease: "easeOut" }}
-            className="text-xl md:text-2xl text-steel mb-4 max-w-3xl mx-auto leading-relaxed text-balance"
+            className="text-lg sm:text-xl md:text-2xl text-steel mb-4 max-w-3xl mx-auto leading-relaxed text-balance"
           >
             We reverse-engineer your market, competitors, and highest-converting
             deal patterns to build automated outbound systems that deliver
@@ -243,84 +244,86 @@ const Hero = () => {
             No bought lists. No spray-and-pray. No hope marketing.
           </motion.p>
 
-          {/* CTA buttons with enhanced animations and glow effects */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.8, duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
-          >
-            <motion.div 
-              whileHover={{ scale: 1.08, y: -2 }} 
-              whileTap={{ scale: 0.97 }}
-              animate={{
-                boxShadow: [
-                  '0 0 0px hsl(186 65% 42% / 0)',
-                  '0 0 30px hsl(186 65% 42% / 0.4)',
-                  '0 0 0px hsl(186 65% 42% / 0)'
-                ]
-              }}
-              transition={{
-                boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-              }}
-              className="rounded-full"
-            >
-              <Button
-                variant="surgical"
-                size="xl"
-                className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden"
-              >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                  animate={{
-                    x: ['-100%', '200%']
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                    repeatDelay: 1
-                  }}
-                />
-                <span className="relative z-10">Book a 15-Minute Intelligence Audit</span>
-                <ArrowRight className="ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </motion.div>
-            
-            <motion.div 
-              whileHover={{ scale: 1.08, y: -2 }} 
-              whileTap={{ scale: 0.97 }}
-            >
-              <a
-                href="https://www.linkedin.com/company/gtmoutboundservices/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  variant="intelligence"
-                  size="xl"
-                  className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden"
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
-                    animate={{
-                      x: ['-100%', '200%']
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "linear",
-                      repeatDelay: 1,
-                      delay: 0.5
-                    }}
-                  />
-                  <LinkedinIcon className="mr-2 relative z-10" />
-                  <span className="relative z-10">DM "INTEL" on LinkedIn</span>
-                </Button>
-              </a>
-            </motion.div>
-          </motion.div>
-
+         {/* // CTA buttons with enhanced animations and glow effects */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 1.8, duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+  className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
+>
+  {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
+  <motion.div 
+    whileHover={{ scale: 1.08, y: -2 }} 
+    whileTap={{ scale: 0.97 }}
+    animate={{
+      boxShadow: [
+        '0 0 0px hsl(186 65% 42% / 0)',
+        '0 0 30px hsl(186 65% 42% / 0.4)',
+        '0 0 0px hsl(186 65% 42% / 0)'
+      ]
+    }}
+    transition={{
+      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+    }}
+    className="rounded-full w-full sm:w-auto" // ADDED w-full sm:w-auto to prevent stretching on desktop/tablet
+  >
+    <Button
+      variant="surgical"
+      size="xl"
+      className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden **text-base py-3 px-6 sm:text-xl sm:py-4 sm:px-8**" // ADDED mobile size classes
+    >
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+        animate={{
+          x: ['-100%', '200%']
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "linear",
+          repeatDelay: 1
+        }}
+      />
+      <span className="relative z-10">Book a 15-Minute Intelligence Audit</span>
+      <ArrowRight className="ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
+    </Button>
+  </motion.div>
+  
+  {/* SECOND BUTTON (DM "INTEL" on LinkedIn) */}
+  <motion.div 
+    whileHover={{ scale: 1.08, y: -2 }} 
+    whileTap={{ scale: 0.97 }}
+    className="w-full sm:w-auto" // ADDED w-full sm:w-auto
+  >
+    <a
+      href="https://www.linkedin.com/company/gtmoutboundservices/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button
+        variant="intelligence"
+        size="xl"
+        className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden **text-base py-3 px-6 sm:text-xl sm:py-4 sm:px-8**" // ADDED mobile size classes
+      >
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
+          animate={{
+            x: ['-100%', '200%']
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear",
+            repeatDelay: 1,
+            delay: 0.5
+          }}
+        />
+        <LinkedinIcon className="mr-2 relative z-10 w-5 h-5" /> {/* Ensured icon size is appropriate */}
+        <span className="relative z-10">DM "INTEL" on LinkedIn</span>
+      </Button>
+    </a>
+  </motion.div>
+</motion.div>
           {/* Trust indicators with enhanced staggered animations and pulse effects */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
