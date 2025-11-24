@@ -277,6 +277,7 @@ const Hero = () => {
     duration: 0.8,
     ease: [0.34, 1.56, 0.64, 1],
   }}
+  // We keep this, which ensures vertical stacking on mobile and horizontal on 'sm'
   className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
 >
   {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
@@ -293,13 +294,14 @@ const Hero = () => {
     transition={{
       boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
     }}
-    className="rounded-full w-full sm:w-auto" // Button takes full width on mobile
+    // UPDATED: Now set to w-full up until the md breakpoint
+    className="rounded-full w-full md:w-auto" 
   >
     <Button
       variant="surgical"
       size="xl"
-      // UPDATED: Used 'text-sm' and smaller padding 'py-2.5 px-5' for mobile
-      className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 sm:text-xl sm:py-4 sm:px-8"
+      // Using identical padding and text size for mobile/sm to ensure height match
+      className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
     >
       <motion.div
         className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
@@ -324,7 +326,8 @@ const Hero = () => {
   <motion.div
     whileHover={{ scale: 1.08, y: -2 }}
     whileTap={{ scale: 0.97 }}
-    className="w-full sm:w-auto" // Button takes full width on mobile
+    // UPDATED: Now set to w-full up until the md breakpoint
+    className="w-full md:w-auto" 
   >
     <a
       href="https://www.linkedin.com/company/gtmoutboundservices/"
@@ -334,8 +337,8 @@ const Hero = () => {
       <Button
         variant="intelligence"
         size="xl"
-        // UPDATED: Used 'text-sm' and smaller padding 'py-2.5 px-5' for mobile
-        className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden text-sm py-2.5 px-5 sm:text-xl sm:py-4 sm:px-8"
+        // Using identical padding and text size for mobile/sm to ensure height match
+        className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
       >
         <motion.div
           className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
