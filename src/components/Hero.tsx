@@ -379,102 +379,81 @@ const Hero = () => {
           </motion.div>
 
           {/* --- CREDIBILITY BAR (With shimmer light effect) --- */}
-<div className="mt-12 w-full">
-  <motion.div
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 2.2, duration: 0.8 }}
-    className="py-6 px-6 md:px-14 inline-flex items-center justify-center rounded-full bg-background/40 backdrop-blur-xl border border-border/70 shadow-2xl mx-auto relative overflow-hidden"
-  >
-    {/* Animated background shimmer */}
-    <motion.div
-      className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"
-      animate={{ x: ['-200%', '200%'] }}
-      transition={{
-        duration: 4,
-        repeat: Infinity,
-        ease: "linear",
-        repeatDelay: 2
-      }}
-    />
+{/* --- MODERN CREDIBILITY BAR (Responsive Grid/List) --- */}
+          <div className="mt-16 w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.2, duration: 0.8 }}
+              className="max-w-4xl mx-auto"
+            >
+              {/* Optional: Label for the logos */}
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2.3, duration: 0.5 }}
+                className="text-center text-sm font-medium text-muted-foreground/70 mb-6 uppercase tracking-widest"
+              >
+                Trusted by, Certified by, & Powered by
+              </motion.p>
+              
+              {/* Logos Container - Responsive Flex/Grid */}
+              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 p-4 md:p-6 rounded-xl bg-secondary/30 backdrop-blur-sm border border-border/50 shadow-inner">
+                
+                {/* Logo Item (Example for ACCA) */}
+                <motion.img
+                  src="/logos/acca-logo.jpeg"
+                  alt="ACCA"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.4, duration: 0.6 }}
+                  className="h-8 sm:h-9 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                />
 
-    <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 relative z-10">
+                {/* Logo Item (Example for LinkedIn) */}
+                <motion.img
+                  src="/logos/linkedin-logo.png"
+                  alt="LinkedIn"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.5, duration: 0.6 }}
+                  className="h-8 sm:h-10 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                />
 
-      {/* Label - hidden on mobile */}
-      <span className="text-xs sm:text-sm font-medium text-muted-foreground/70 whitespace-nowrap hidden sm:block">
-        As seen in / Powered by:
-      </span>
+                {/* Logo Item (Example for Clay) */}
+                <motion.img
+                  src="/logos/clay-logo.png"
+                  alt="Clay"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.6, duration: 0.6 }}
+                  className="h-10 sm:h-12 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                />
 
-      {/* Logos */}
-      <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-        
-        {/* ACCA */}
-        <motion.img
-          src="/logos/acca-logo.jpeg"
-          alt="ACCA"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.4 }}
-          className="h-10 sm:h-11 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-          style={{
-            filter:
-              "drop-shadow(0 0 5px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.2))",
-          }}
-        />
+                {/* Logo Item (Example for HubSpot) */}
+                <motion.img
+                  src="/logos/hubspot-logo.png"
+                  alt="HubSpot Certified Partner"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.7, duration: 0.6 }}
+                  className="h-8 sm:h-10 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                />
 
-        {/* LinkedIn */}
-        <motion.img
-          src="/logos/linkedin-logo.png"
-          alt="LinkedIn"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.5 }}
-          className="h-10 sm:h-12 w-10 sm:w-12 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-        />
+                {/* Logo Item (Example for UK Government) */}
+                <motion.img
+                  src="/logos/uk-logo.png"
+                  alt="UK Government"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.8, duration: 0.6 }}
+                  className="h-10 sm:h-12 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                />
 
-        {/* Clay */}
-        <motion.img
-          src="/logos/clay-logo.png"
-          alt="Clay"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.6 }}
-          className="h-12 sm:h-14 w-auto opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-          style={{
-            filter:
-              "drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3))",
-          }}
-        />
-
-        {/* HubSpot */}
-        <motion.img
-          src="/logos/hubspot-logo.png"
-          alt="HubSpot Certified Partner"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.7 }}
-          className="h-10 sm:h-12 w-auto transition-all duration-300 hover:scale-110"
-        />
-
-        {/* UK Government */}
-        <motion.img
-          src="/logos/uk-logo.png"
-          alt="UK Government"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.8 }}
-          className="h-12 sm:h-14 w-12 sm:w-14 opacity-80 hover:opacity-100 transition-all duration-300 hover:scale-110"
-          style={{
-            filter:
-              "drop-shadow(0 0 8px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5))",
-          }}
-        />
-
-      </div>
-    </div>
-  </motion.div>
-</div>
-
+              </div>
+            </motion.div>
+          </div>
+          {/* ------------------------------------------- */}
           {/* ------------------------------------------- */}
         </motion.div>
 
