@@ -24,23 +24,23 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-primary" />
-      
+
       {/* Animated mesh gradient overlay */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 opacity-40"
         animate={{
           background: [
-            'radial-gradient(circle at 20% 50%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 50%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 50% 80%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 20% 50%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)',
-          ]
+            "radial-gradient(circle at 20% 50%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 80% 50%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 50% 80%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)",
+            "radial-gradient(circle at 20% 50%, hsl(186 65% 42% / 0.15) 0%, transparent 50%)",
+          ],
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
 
       {/* Dynamic grid with fade animation */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-[linear-gradient(to_right,hsl(220_15%_20%/0.15)_1px,transparent_1px),linear-gradient(to_bottom,hsl(220_15%_20%/0.15)_1px,transparent_1px)] bg-[size:4rem_4rem]"
         animate={{ opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -56,7 +56,7 @@ const Hero = () => {
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
       />
-      
+
       <motion.div
         className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-teal-primary/15 blur-[120px] rounded-full hidden sm:block"
         animate={{
@@ -64,7 +64,12 @@ const Hero = () => {
           y: [0, 60, 0],
           scale: [1, 1.3, 1],
         }}
-        transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
       />
 
       <motion.div
@@ -73,7 +78,12 @@ const Hero = () => {
           x: [-150, 150, -150],
           y: [-100, 100, -100],
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1,
+        }}
       />
 
       {/* Spotlight effect following cursor (HIDDEN ON SMALL SCREENS) */}
@@ -82,9 +92,10 @@ const Hero = () => {
         style={{
           left: spotlightX,
           top: spotlightY,
-          x: '-50%',
-          y: '-50%',
-          background: 'radial-gradient(circle, hsl(186 65% 42% / 0.08) 0%, transparent 70%)',
+          x: "-50%",
+          y: "-50%",
+          background:
+            "radial-gradient(circle, hsl(186 65% 42% / 0.08) 0%, transparent 70%)",
         }}
       />
 
@@ -97,7 +108,12 @@ const Hero = () => {
       <motion.div
         className="absolute bottom-40 left-0 w-px h-64 bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden sm:block"
         animate={{ opacity: [0.2, 0.6, 0.2], scaleY: [0.8, 1, 0.8] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
       />
 
       {/* UPDATED: Reduced padding for mobile (py-16) */}
@@ -112,19 +128,23 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
+            transition={{
+              delay: 0.2,
+              duration: 0.8,
+              ease: [0.34, 1.56, 0.64, 1],
+            }}
             className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-secondary/60 border border-primary/20 mb-8 backdrop-blur-md shadow-lg"
-            style={{ boxShadow: '0 0 30px hsl(186 65% 42% / 0.15)' }}
+            style={{ boxShadow: "0 0 30px hsl(186 65% 42% / 0.15)" }}
           >
             {/* Logo with glow */}
             <motion.div
               className="relative"
-              animate={{ 
+              animate={{
                 boxShadow: [
-                  '0 0 0px hsl(186 65% 42% / 0)',
-                  '0 0 20px hsl(186 65% 42% / 0.4)',
-                  '0 0 0px hsl(186 65% 42% / 0)'
-                ]
+                  "0 0 0px hsl(186 65% 42% / 0)",
+                  "0 0 20px hsl(186 65% 42% / 0.4)",
+                  "0 0 0px hsl(186 65% 42% / 0)",
+                ],
               }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -145,7 +165,7 @@ const Hero = () => {
             >
               GTM Outbound Services
             </motion.span>
-            
+
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -158,7 +178,11 @@ const Hero = () => {
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 1, ease: [0.34, 1.56, 0.64, 1] }}
+            transition={{
+              delay: 0.4,
+              duration: 1,
+              ease: [0.34, 1.56, 0.64, 1],
+            }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-balance relative"
           >
             <motion.span
@@ -180,7 +204,7 @@ const Hero = () => {
                 stiffness: 150,
               }}
               style={{
-                filter: 'drop-shadow(0 0 20px hsl(186 65% 42% / 0.6))'
+                filter: "drop-shadow(0 0 20px hsl(186 65% 42% / 0.6))",
               }}
             >
               →
@@ -190,28 +214,28 @@ const Hero = () => {
               initial={{ opacity: 0, y: 50, rotateX: 90 }}
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               transition={{ delay: 1.1, duration: 0.9, type: "spring" }}
-              style={{ 
-                backgroundSize: '200% auto',
+              style={{
+                backgroundSize: "200% auto",
               }}
             >
               <motion.span
-                animate={{ 
-                  backgroundPosition: ['0% center', '200% center', '0% center']
+                animate={{
+                  backgroundPosition: ["0% center", "200% center", "0% center"],
                 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 style={{
-                  backgroundImage: 'linear-gradient(90deg, hsl(0 0% 98%), hsl(186 65% 42%), hsl(0 0% 98%))',
-                  backgroundSize: '200% auto',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  display: 'inline-block'
+                  backgroundImage:
+                    "linear-gradient(90deg, hsl(0 0% 98%), hsl(186 65% 42%), hsl(0 0% 98%))",
+                  backgroundSize: "200% auto",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  display: "inline-block",
                 }}
               >
                 Predictable Enterprise Pipeline
               </motion.span>
             </motion.span>
-            
             {/* Accent line decoration */}
             <motion.div
               className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"
@@ -244,86 +268,93 @@ const Hero = () => {
             No bought lists. No spray-and-pray. No hope marketing.
           </motion.p>
 
-         {/* // CTA buttons with enhanced animations and glow effects */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 1.8, duration: 0.8, ease: [0.34, 1.56, 0.64, 1] }}
-  className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
->
-  {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
-  <motion.div 
-    whileHover={{ scale: 1.08, y: -2 }} 
-    whileTap={{ scale: 0.97 }}
-    animate={{
-      boxShadow: [
-        '0 0 0px hsl(186 65% 42% / 0)',
-        '0 0 30px hsl(186 65% 42% / 0.4)',
-        '0 0 0px hsl(186 65% 42% / 0)'
-      ]
-    }}
-    transition={{
-      boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" }
-    }}
-    className="rounded-full w-full sm:w-auto" // ADDED w-full sm:w-auto to prevent stretching on desktop/tablet
-  >
-    <Button
-      variant="surgical"
-      size="xl"
-      className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden **text-base py-3 px-6 sm:text-xl sm:py-4 sm:px-8**" // ADDED mobile size classes
-    >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-        animate={{
-          x: ['-100%', '200%']
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "linear",
-          repeatDelay: 1
-        }}
-      />
-      <span className="relative z-10">Book a 15-Minute Intelligence Audit</span>
-      <ArrowRight className="ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
-    </Button>
-  </motion.div>
-  
-  {/* SECOND BUTTON (DM "INTEL" on LinkedIn) */}
-  <motion.div 
-    whileHover={{ scale: 1.08, y: -2 }} 
-    whileTap={{ scale: 0.97 }}
-    className="w-full sm:w-auto" // ADDED w-full sm:w-auto
-  >
-    <a
-      href="https://www.linkedin.com/company/gtmoutboundservices/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Button
-        variant="intelligence"
-        size="xl"
-        className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden **text-base py-3 px-6 sm:text-xl sm:py-4 sm:px-8**" // ADDED mobile size classes
-      >
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
-          animate={{
-            x: ['-100%', '200%']
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "linear",
-            repeatDelay: 1,
-            delay: 0.5
-          }}
-        />
-        <LinkedinIcon className="mr-2 relative z-10 w-5 h-5" /> {/* Ensured icon size is appropriate */}
-        <span className="relative z-10">DM "INTEL" on LinkedIn</span>
-      </Button>
-    </a>
-  </motion.div>
-</motion.div>
+          {/* // CTA buttons with enhanced animations and glow effects */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 1.8,
+              duration: 0.8,
+              ease: [0.34, 1.56, 0.64, 1],
+            }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
+          >
+            {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
+            <motion.div
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              animate={{
+                boxShadow: [
+                  "0 0 0px hsl(186 65% 42% / 0)",
+                  "0 0 30px hsl(186 65% 42% / 0.4)",
+                  "0 0 0px hsl(186 65% 42% / 0)",
+                ],
+              }}
+              transition={{
+                boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+              }}
+              className="rounded-full w-full sm:w-auto" // ADDED w-full sm:w-auto to prevent stretching on desktop/tablet
+            >
+              <Button
+                variant="surgical"
+                size="xl"
+                className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden **text-base py-3 px-6 sm:text-xl sm:py-4 sm:px-8**" // ADDED mobile size classes
+              >
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  animate={{
+                    x: ["-100%", "200%"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear",
+                    repeatDelay: 1,
+                  }}
+                />
+                <span className="relative z-10">
+                  Book a 15-Minute Intelligence Audit
+                </span>
+                <ArrowRight className="ml-2 relative z-10 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+
+            {/* SECOND BUTTON (DM "INTEL" on LinkedIn) */}
+            <motion.div
+              whileHover={{ scale: 1.08, y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto" // ADDED w-full sm:w-auto
+            >
+              <a
+                href="https://www.linkedin.com/company/gtmoutboundservices/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="intelligence"
+                  size="xl"
+                  className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden **text-base py-3 px-6 sm:text-xl sm:py-4 sm:px-8**" // ADDED mobile size classes
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent"
+                    animate={{
+                      x: ["-100%", "200%"],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "linear",
+                      repeatDelay: 1,
+                      delay: 0.5,
+                    }}
+                  />
+                  <LinkedinIcon className="mr-2 relative z-10 w-5 h-5" />{" "}
+                  {/* Ensured icon size is appropriate */}
+                  <span className="relative z-10">DM "INTEL" on LinkedIn</span>
+                </Button>
+              </a>
+            </motion.div>
+          </motion.div>
           {/* Trust indicators with enhanced staggered animations and pulse effects */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -341,24 +372,24 @@ const Hero = () => {
                 key={text}
                 initial={{ opacity: 0, x: -30, scale: 0.8 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ 
-                  delay: 2.2 + index * 0.15, 
+                transition={{
+                  delay: 2.2 + index * 0.15,
                   duration: 0.7,
                   type: "spring",
-                  stiffness: 100
+                  stiffness: 100,
                 }}
                 whileHover={{ scale: 1.05, x: 2 }}
                 className="flex items-center gap-2 group cursor-default"
               >
                 <motion.div
                   className="w-2 h-2 rounded-full bg-primary relative"
-                  animate={{ 
+                  animate={{
                     scale: [1, 1.5, 1],
                     boxShadow: [
-                      '0 0 0px hsl(186 65% 42% / 0)',
-                      '0 0 15px hsl(186 65% 42% / 0.8)',
-                      '0 0 0px hsl(186 65% 42% / 0)'
-                    ]
+                      "0 0 0px hsl(186 65% 42% / 0)",
+                      "0 0 15px hsl(186 65% 42% / 0.8)",
+                      "0 0 0px hsl(186 65% 42% / 0)",
+                    ],
                   }}
                   transition={{
                     duration: 2.5,
@@ -376,7 +407,9 @@ const Hero = () => {
                     }}
                   />
                 </motion.div>
-                <span className="group-hover:text-foreground transition-colors">{text}</span>
+                <span className="group-hover:text-foreground transition-colors">
+                  {text}
+                </span>
               </motion.div>
             ))}
           </motion.div>
@@ -398,10 +431,9 @@ const Hero = () => {
               >
                 As seen in/ Powered by:
               </motion.p>
-              
+
               {/* Logos Container - Responsive Flex/Grid */}
               <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 p-4 md:p-6 rounded-xl bg-secondary/30 backdrop-blur-sm border border-border/50 shadow-inner">
-                
                 {/* Logo Item (ACCA) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/acca-logo.jpeg"
@@ -409,7 +441,7 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.4, duration: 0.6 }}
-                  className="h-8 sm:h-9 w-auto transition-all duration-500" 
+                  className="h-8 sm:h-9 w-auto transition-all duration-500"
                 />
 
                 {/* Logo Item (LinkedIn) - Now in full color/opacity */}
@@ -451,7 +483,6 @@ const Hero = () => {
                   transition={{ delay: 2.8, duration: 0.6 }}
                   className="h-10 sm:h-12 w-auto transition-all duration-500"
                 />
-
               </div>
             </motion.div>
           </div>
