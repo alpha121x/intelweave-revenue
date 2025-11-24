@@ -269,6 +269,7 @@ const Hero = () => {
           </motion.p>
 
          {/* CTA buttons with enhanced animations and glow effects */}
+{/* CTA buttons with enhanced animations and glow effects */}
 <motion.div
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
@@ -277,7 +278,6 @@ const Hero = () => {
     duration: 0.8,
     ease: [0.34, 1.56, 0.64, 1],
   }}
-  // We keep this, which ensures vertical stacking on mobile and horizontal on 'sm'
   className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
 >
   {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
@@ -294,13 +294,13 @@ const Hero = () => {
     transition={{
       boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
     }}
-    // UPDATED: Now set to w-full up until the md breakpoint
+    // Ensures full width on mobile/small tablets
     className="rounded-full w-full md:w-auto" 
   >
     <Button
       variant="surgical"
       size="xl"
-      // Using identical padding and text size for mobile/sm to ensure height match
+      // Mobile style classes for size and padding
       className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
     >
       <motion.div
@@ -326,7 +326,7 @@ const Hero = () => {
   <motion.div
     whileHover={{ scale: 1.08, y: -2 }}
     whileTap={{ scale: 0.97 }}
-    // UPDATED: Now set to w-full up until the md breakpoint
+    // Ensures full width on mobile/small tablets
     className="w-full md:w-auto" 
   >
     <a
@@ -337,7 +337,7 @@ const Hero = () => {
       <Button
         variant="intelligence"
         size="xl"
-        // Using identical padding and text size for mobile/sm to ensure height match
+        // Mobile style classes for size and padding
         className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
       >
         <motion.div
@@ -359,7 +359,6 @@ const Hero = () => {
     </a>
   </motion.div>
 </motion.div>
-
           {/* Trust indicators with enhanced staggered animations and pulse effects */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
