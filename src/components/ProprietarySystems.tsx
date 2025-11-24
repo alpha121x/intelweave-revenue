@@ -31,8 +31,8 @@ const systems = [
 
 const ProprietarySystems = () => {
   return (
-    <section className="relative py-24 bg-navy-deep">
-      <div className="container mx-auto px-6">
+    <section className="relative py-16 sm:py-20 md:py-24 bg-navy-deep">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,21 +41,21 @@ const ProprietarySystems = () => {
           className="max-w-6xl mx-auto"
         >
           {/* Section header */}
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <div className="mb-12 sm:mb-16 text-center">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-4 sm:mb-6">
               <Zap className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Proprietary Technology</span>
+              <span className="text-xs sm:text-sm font-medium text-primary">Proprietary Technology</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-balance">
               Proprietary Systems
             </h2>
-            <p className="text-xl text-steel max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-steel max-w-3xl mx-auto">
               Intelligence Infrastructure That Creates Unfair Advantages
             </p>
           </div>
 
           {/* Systems grid */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 md:space-y-8">
             {systems.map((system, index) => (
               <motion.div
                 key={index}
@@ -63,17 +63,17 @@ const ProprietarySystems = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-8 bg-gradient-surface border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
+                className="group p-4 sm:p-6 md:p-8 bg-gradient-surface border border-border rounded-xl hover:border-primary/50 transition-all duration-300"
               >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <system.icon className="w-6 h-6 text-primary" />
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+                  <div className="flex-shrink-0 mb-3 sm:mb-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <system.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-2xl font-bold mb-3">{system.title}</h3>
-                    <p className="text-lg text-steel leading-relaxed">{system.description}</p>
+                    <h3 className="text-base sm:text-lg md:text-2xl font-bold mb-2 sm:mb-3">{system.title}</h3>
+                    <p className="text-xs sm:text-sm md:text-base text-steel leading-relaxed">{system.description}</p>
                   </div>
                 </div>
               </motion.div>
