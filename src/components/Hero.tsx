@@ -355,64 +355,66 @@ const Hero = () => {
               </a>
             </motion.div>
           </motion.div>
-          {/* Trust indicators with enhanced staggered animations and pulse effects */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 0.8 }}
-            className="mt-16 flex flex-wrap items-center justify-center gap-6 md:gap-8 text-sm text-muted-foreground"
-          >
-            {[
-              "Led by Chartered Accountant",
-              "Proprietary Intelligence Stack",
-              "Enterprise-Grade Systems",
-              "Strategist with a 20-30% conversion rate",
-            ].map((text, index) => (
-              <motion.div
-                key={text}
-                initial={{ opacity: 0, x: -30, scale: 0.8 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{
-                  delay: 2.2 + index * 0.15,
-                  duration: 0.7,
-                  type: "spring",
-                  stiffness: 100,
-                }}
-                whileHover={{ scale: 1.05, x: 2 }}
-                className="flex items-center gap-2 group cursor-default"
-              >
-                <motion.div
-                  className="w-2 h-2 rounded-full bg-primary relative"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    boxShadow: [
-                      "0 0 0px hsl(186 65% 42% / 0)",
-                      "0 0 15px hsl(186 65% 42% / 0.8)",
-                      "0 0 0px hsl(186 65% 42% / 0)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    delay: index * 0.4,
-                  }}
-                >
-                  <motion.div
-                    className="absolute inset-0 rounded-full bg-primary"
-                    animate={{ scale: [1, 2, 2], opacity: [0.8, 0, 0] }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      delay: index * 0.4,
-                    }}
-                  />
-                </motion.div>
-                <span className="group-hover:text-foreground transition-colors">
-                  {text}
-                </span>
-              </motion.div>
-            ))}
-          </motion.div>
+
+         {/* Trust indicators with enhanced staggered animations and pulse effects */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 2, duration: 0.8 }}
+  // UPDATED: mt-10 for mobile, reduced gap for mobile
+  className="mt-10 sm:mt-16 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 sm:gap-6 md:gap-8 text-sm text-muted-foreground"
+>
+  {[
+    "Led by Chartered Accountant",
+    "Proprietary Intelligence Stack",
+    "Enterprise-Grade Systems",
+    "Strategist with a 20-30% conversion rate",
+  ].map((text, index) => (
+    <motion.div
+      key={text}
+      initial={{ opacity: 0, x: -30, scale: 0.8 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      transition={{
+        delay: 2.2 + index * 0.15,
+        duration: 0.7,
+        type: "spring",
+        stiffness: 100,
+      }}
+      whileHover={{ scale: 1.05, x: 2 }}
+      className="flex items-center gap-2 group cursor-default"
+    >
+      <motion.div
+        className="w-2 h-2 rounded-full bg-primary relative"
+        animate={{
+          scale: [1, 1.5, 1],
+          boxShadow: [
+            "0 0 0px hsl(186 65% 42% / 0)",
+            "0 0 15px hsl(186 65% 42% / 0.8)",
+            "0 0 0px hsl(186 65% 42% / 0)",
+          ],
+        }}
+        transition={{
+          duration: 2.5,
+          repeat: Infinity,
+          delay: index * 0.4,
+        }}
+      >
+        <motion.div
+          className="absolute inset-0 rounded-full bg-primary"
+          animate={{ scale: [1, 2, 2], opacity: [0.8, 0, 0] }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            delay: index * 0.4,
+          }}
+        />
+      </motion.div>
+      <span className="group-hover:text-foreground transition-colors">
+        {text}
+      </span>
+    </motion.div>
+  ))}
+</motion.div>
 
           {/* --- MODERN CREDIBILITY BAR (Responsive Grid/List) --- */}
           <div className="mt-16 w-full">
