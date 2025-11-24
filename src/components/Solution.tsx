@@ -72,59 +72,57 @@ const Solution = () => {
           </div>
 
           {/* Cards */}
-          <div className="space-y-3 sm:space-y-5">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group relative p-3 sm:p-5 md:p-8 bg-card border border-border rounded-xl 
-                           hover:border-primary/50 transition-all duration-300 hover:shadow-depth overflow-hidden"
-              >
-                <div className="flex items-start gap-3 sm:gap-5">
-                  {/* Icon */}
-                  <div className="flex-shrink-0">
-                    <div className="w-9 h-9 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <solution.icon className="w-4 h-4 sm:w-6 sm:h-6 text-primary" />
-                    </div>
-                  </div>
-
-                  <div className="flex-grow min-w-0">
-                    {/* Title */}
-                    <h3 className="text-base sm:text-xl font-bold mb-1 sm:mb-3 leading-snug">
-                      {index + 1}. {solution.title}
-                    </h3>
-
-                    {/* Description */}
-                    {solution.description && (
-                      <p className="text-xs sm:text-sm md:text-base text-steel leading-relaxed whitespace-pre-line">
-                        {solution.description}
-                      </p>
-                    )}
-
-                    {/* Points */}
-                    {solution.points && (
-                      <ul className="space-y-1 sm:space-y-2 mt-2 sm:mt-3">
-                        {solution.points.map((point, pointIndex) => (
-                          <li
-                            key={pointIndex}
-                            className="flex items-start gap-2 sm:gap-3"
-                          >
-                            <span className="text-primary mt-1 text-xs sm:text-sm md:text-base">•</span>
-                            <span className="text-xs sm:text-sm md:text-base text-steel">
-                              {point}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+      <div className="space-y-3 sm:space-y-5">
+  {solutions.map((solution, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1 }}
+      className="group relative p-3 sm:p-5 md:p-8 bg-card border border-border rounded-xl 
+                 hover:border-primary/50 transition-all duration-300 hover:shadow-depth overflow-hidden"
+    >
+      {/* Mobile: Stack vertically, desktop: horizontal */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
+        {/* Icon */}
+        <div className="flex-shrink-0 mb-2 sm:mb-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <solution.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
           </div>
+        </div>
+
+        {/* Text */}
+        <div className="flex-grow min-w-0">
+          <h3 className="text-base sm:text-xl font-bold mb-1 sm:mb-3 leading-snug">
+            {index + 1}. {solution.title}
+          </h3>
+
+          {solution.description && (
+            <p className="text-xs sm:text-sm md:text-base text-steel leading-relaxed whitespace-pre-line mb-2 sm:mb-3">
+              {solution.description}
+            </p>
+          )}
+
+          {/* Points stacked vertically on mobile */}
+          {solution.points && (
+            <ul className="flex flex-col sm:flex-col space-y-1 sm:space-y-2">
+              {solution.points.map((point, pointIndex) => (
+                <li key={pointIndex} className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-primary mt-1 text-xs sm:text-sm md:text-base">•</span>
+                  <span className="text-xs sm:text-sm md:text-base text-steel">
+                    {point}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
         </motion.div>
       </div>
     </section>
