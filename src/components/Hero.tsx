@@ -378,8 +378,7 @@ const Hero = () => {
             ))}
           </motion.div>
 
-          {/* --- CREDIBILITY BAR (With shimmer light effect) --- */}
-{/* --- MODERN CREDIBILITY BAR (Responsive Grid/List) --- */}
+          {/* --- MODERN CREDIBILITY BAR (Responsive Grid/List) --- */}
           <div className="mt-16 w-full">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -394,95 +393,67 @@ const Hero = () => {
                 transition={{ delay: 2.3, duration: 0.5 }}
                 className="text-center text-sm font-medium text-muted-foreground/70 mb-6 uppercase tracking-widest"
               >
-                Trusted by, Certified by, & Powered by
+                As seen in/ Powered by:
               </motion.p>
               
               {/* Logos Container - Responsive Flex/Grid */}
               <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 p-4 md:p-6 rounded-xl bg-secondary/30 backdrop-blur-sm border border-border/50 shadow-inner">
                 
-                {/* Logo Item (Example for ACCA) */}
+                {/* Logo Item (ACCA) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/acca-logo.jpeg"
                   alt="ACCA"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.4, duration: 0.6 }}
-                  className="h-8 sm:h-9 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                  className="h-8 sm:h-9 w-auto transition-all duration-500" 
                 />
 
-                {/* Logo Item (Example for LinkedIn) */}
+                {/* Logo Item (LinkedIn) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/linkedin-logo.png"
                   alt="LinkedIn"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.5, duration: 0.6 }}
-                  className="h-8 sm:h-10 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                  className="h-8 sm:h-10 w-auto transition-all duration-500"
                 />
 
-                {/* Logo Item (Example for Clay) */}
+                {/* Logo Item (Clay) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/clay-logo.png"
                   alt="Clay"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.6, duration: 0.6 }}
-                  className="h-10 sm:h-12 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                  className="h-10 sm:h-12 w-auto transition-all duration-500"
                 />
 
-                {/* Logo Item (Example for HubSpot) */}
+                {/* Logo Item (HubSpot) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/hubspot-logo.png"
                   alt="HubSpot Certified Partner"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.7, duration: 0.6 }}
-                  className="h-8 sm:h-10 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                  className="h-8 sm:h-10 w-auto transition-all duration-500"
                 />
 
-                {/* Logo Item (Example for UK Government) */}
+                {/* Logo Item (UK Government) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/uk-logo.png"
                   alt="UK Government"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.8, duration: 0.6 }}
-                  className="h-10 sm:h-12 w-auto grayscale contrast-200 opacity-60 hover:grayscale-0 hover:contrast-100 hover:opacity-100 transition-all duration-500"
+                  className="h-10 sm:h-12 w-auto transition-all duration-500"
                 />
 
               </div>
             </motion.div>
           </div>
           {/* ------------------------------------------- */}
-          {/* ------------------------------------------- */}
         </motion.div>
-
-        {/* Scroll indicator - Moved outside the main motion.div for better visual placement */}
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2 text-muted-foreground"
-          >
-            <span className="text-xs font-medium">Scroll to explore</span>
-            <div className="w-6 h-10 rounded-full border-2 border-border/50 flex items-start justify-center p-2">
-              <motion.div
-                animate={{ y: [0, 12, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="w-1 h-2 rounded-full bg-primary"
-              />
-            </div>
-          </motion.div>
-        </motion.div> */}
       </div>
     </section>
   );
