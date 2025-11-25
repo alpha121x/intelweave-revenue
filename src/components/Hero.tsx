@@ -116,8 +116,8 @@ const Hero = () => {
         }}
       />
 
-      {/* UPDATED: Reduced padding for mobile (py-16) */}
-      <div className="container relative z-30 mx-auto px-6 py-16 sm:py-20">
+      {/* FIX 1: Added pt-32/sm:pt-40 to account for fixed Navbar height */}
+      <div className="container relative z-30 mx-auto px-6 py-16 pt-32 sm:py-20 sm:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -245,8 +245,8 @@ const Hero = () => {
               transition={{
                 boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
               }}
-              // Ensures full width on mobile/small tablets
-              className="rounded-full w-full md:w-auto"
+              // FIX 2: Removed 'rounded-full' class. Adjusted width.
+              className="w-full sm:w-auto"
             >
               <Button
                 variant="surgical"
@@ -277,8 +277,8 @@ const Hero = () => {
             <motion.div
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              // Ensures full width on mobile/small tablets
-              className="w-full md:w-auto"
+              // FIX 2: Removed 'rounded-full' class. Adjusted width.
+              className="w-full sm:w-auto"
             >
               <a
                 href="https://www.linkedin.com/company/gtmoutboundservices/"
