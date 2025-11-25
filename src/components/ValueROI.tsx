@@ -26,7 +26,7 @@ const valueProps = [
 
 const ValueROI = () => {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-primary">
+    <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-primary" id="value-roi">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

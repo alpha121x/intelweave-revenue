@@ -43,7 +43,7 @@ const advantages = [
 
 const Why = () => {
   return (
-    <section className="relative py-24 bg-gradient-primary">
+    <section className="relative py-24 bg-gradient-primary" id="why">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

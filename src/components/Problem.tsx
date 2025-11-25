@@ -26,7 +26,7 @@ const problems = [
 
 const Problem = () => {
   return (
-    <section className="relative py-24 bg-navy-deep">
+    <section className="relative py-24 bg-navy-deep" id="problem">
       {/* Accent line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
       

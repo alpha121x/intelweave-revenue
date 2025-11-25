@@ -31,7 +31,7 @@ const systems = [
 
 const ProprietarySystems = () => {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 bg-navy-deep">
+    <section className="relative py-16 sm:py-20 md:py-24 bg-navy-deep" id="proprietary-systems">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
