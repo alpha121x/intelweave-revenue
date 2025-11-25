@@ -38,12 +38,19 @@ const Navbar = () => {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between py-4">
-        {/* Logo */}
+        {/* Logo with image and full name */}
         <div 
-          className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-white to-primary bg-clip-text text-transparent cursor-pointer hover:scale-105 transition-transform duration-300"
+          className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform duration-300 group"
           onClick={() => scrollToSection("hero")}
         >
-          GTM Outbound
+          <img 
+            src="/logoo.png" 
+            alt="GTM Outbound Services" 
+            className="w-10 h-10 rounded-full object-contain group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow duration-300"
+          />
+          <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-white to-primary bg-clip-text text-transparent">
+            GTM Outbound Services
+          </span>
         </div>
 
         {/* Desktop Menu */}

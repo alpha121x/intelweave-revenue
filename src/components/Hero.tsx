@@ -124,55 +124,6 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-5xl mx-auto text-center"
         >
-          {/* Overline with Logo & Company Name - Enhanced */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{
-              delay: 0.2,
-              duration: 0.8,
-              ease: [0.34, 1.56, 0.64, 1],
-            }}
-            className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-secondary/60 border border-primary/20 mb-8 backdrop-blur-md shadow-lg"
-            style={{ boxShadow: "0 0 30px hsl(186 65% 42% / 0.15)" }}
-          >
-            {/* Logo with glow */}
-            <motion.div
-              className="relative"
-              animate={{
-                boxShadow: [
-                  "0 0 0px hsl(186 65% 42% / 0)",
-                  "0 0 20px hsl(186 65% 42% / 0.4)",
-                  "0 0 0px hsl(186 65% 42% / 0)",
-                ],
-              }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <motion.img
-                src="/logoo.png"
-                alt="GTM Outbound Services"
-                className="w-10 h-10 rounded-full object-contain"
-                initial={{ opacity: 0, rotate: -180 }}
-                animate={{ opacity: 1, rotate: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-              />
-            </motion.div>
-
-            <motion.span
-              className="text-sm font-semibold text-foreground tracking-wide"
-              animate={{ opacity: [0.9, 1, 0.9] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            >
-              GTM Outbound Services
-            </motion.span>
-
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <Sparkles className="w-4 h-4 text-primary" />
-            </motion.div>
-          </motion.div>
 
           {/* Main headline with dramatic staggered animation and 3D effects */}
           <motion.h1
