@@ -4,7 +4,7 @@ import { LinkedinIcon, Mail, Phone } from "lucide-react";
 
 const Footer: FC = () => {
   return (
-    <footer className="relative py-12 bg-navy-deep border-t border-border">
+    <footer className="relative py-12 bg-navy-deep border-t border-border" id="contact">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -69,7 +69,7 @@ const Footer: FC = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/company/gtmoutboundservices/"
                     className="flex items-center gap-2 text-steel hover:text-primary transition-colors"
                   >
                     <LinkedinIcon className="w-4 h-4" />
@@ -78,7 +78,7 @@ const Footer: FC = () => {
                 </li>
                 <li>
                   <a
-                    href="mailto:contact@gtmoutbound.com"
+                    href="mailto:contact@gtmoutboundservices.com"
                     className="flex items-center gap-2 text-steel hover:text-primary transition-colors"
                   >
                     <Mail className="w-4 h-4" />

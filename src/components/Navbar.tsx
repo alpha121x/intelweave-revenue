@@ -21,6 +21,7 @@ const Navbar = () => {
     { label: "Systems", id: "proprietary-systems" },
     { label: "Value&ROI", id: "value-roi" },
     { label: "Investment", id: "investment" },
+    { label: "Contact", id: "contact" },
   ];
 
   const scrollToSection = (id: string) => {
