@@ -1,24 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, LinkedinIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const sections = [
-    { label: "Home", id: "hero" },
     { label: "Problem", id: "problem" },
     { label: "Solution", id: "solution" },
-    { label: "Comparison", id: "comparison" },
     { label: "Why Us", id: "why" },
-    { label: "Who We Work With", id: "who-we-work-with" },
-    { label: "Value & ROI", id: "value-roi" },
-    { label: "Proprietary Systems", id: "proprietary-systems" },
-    { label: "How We Work", id: "how-we-work" },
-    { label: "Referral Warning", id: "referral-warning" },
-    { label: "Testimonials", id: "testimonials" },
+    { label: "Systems", id: "proprietary-systems" },
+    { label: "ROI", id: "value-roi" },
     { label: "Investment", id: "investment" },
-    { label: "CTA", id: "final-cta" },
   ];
 
   const scrollToSection = (id: string) => {
@@ -30,22 +32,31 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed w-full bg-navy-deep z-50 border-b border-border">
+    <header className={`fixed w-full z-50 transition-all duration-500 ${
+      scrolled 
+        ? 'bg-navy-deep/95 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/5' 
+        : 'bg-transparent'
+    }`}>
       <div className="container mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo */}
-        <div className="text-2xl md:text-3xl font-bold text-primary cursor-pointer" onClick={() => scrollToSection("hero")}>
+        <div 
+          className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-white to-primary bg-clip-text text-transparent cursor-pointer hover:scale-105 transition-transform duration-300"
+          onClick={() => scrollToSection("hero")}
+        >
           GTM Outbound
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {sections.map((section) => (
+        <nav className="hidden lg:flex items-center space-x-8">
+          {sections.map((section, index) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className="text-steel hover:text-primary transition-colors"
+              className="relative text-sm font-medium text-steel hover:text-white transition-all duration-300 group"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {section.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-white group-hover:w-full transition-all duration-300"></span>
             </button>
           ))}
 
@@ -53,18 +64,24 @@ const Navbar = () => {
             href="https://www.linkedin.com/company/gtmoutboundservices/"
             target="_blank"
             rel="noopener noreferrer"
+            className="ml-2"
           >
-            <Button variant="intelligence" size="sm" className="ml-4 flex items-center gap-2">
-              <LinkedinIcon className="w-4 h-4" /> DM "INTEL"
+            <Button 
+              variant="intelligence" 
+              size="sm" 
+              className="flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/20"
+            >
+              <LinkedinIcon className="w-4 h-4" /> 
+              <span className="hidden xl:inline">DM</span> "INTEL"
             </Button>
           </a>
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+            className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-all duration-300 hover:scale-110"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -72,13 +89,16 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-navy-deep shadow-lg z-50 flex flex-col items-center py-4 space-y-3 border-t border-border">
-          {sections.map((section) => (
+      <div className={`lg:hidden absolute top-full left-0 w-full bg-navy-deep/98 backdrop-blur-xl border-t border-primary/20 shadow-2xl transition-all duration-500 ${
+        isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+      }`}>
+        <div className="container mx-auto px-6 py-6 space-y-4">
+          {sections.map((section, index) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className="text-steel hover:text-primary transition-colors w-full text-center py-2"
+              className="block w-full text-left text-steel hover:text-white hover:translate-x-2 transition-all duration-300 py-2 px-4 rounded-lg hover:bg-primary/5"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               {section.label}
             </button>
@@ -88,13 +108,18 @@ const Navbar = () => {
             href="https://www.linkedin.com/company/gtmoutboundservices/"
             target="_blank"
             rel="noopener noreferrer"
+            className="block pt-4"
           >
-            <Button variant="intelligence" size="sm" className="mt-2 flex items-center gap-2">
+            <Button 
+              variant="intelligence" 
+              size="sm" 
+              className="w-full flex items-center justify-center gap-2"
+            >
               <LinkedinIcon className="w-4 h-4" /> DM "INTEL"
             </Button>
           </a>
         </div>
-      )}
+      </div>
     </header>
   );
 };
