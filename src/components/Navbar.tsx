@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, LinkedinIcon } from "lucide-react";
+import { Menu, X, LinkedinIcon, Mail } from "lucide-react"; // FIX: Added 'Mail' icon
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -74,7 +74,23 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-white group-hover:w-full transition-all duration-300"></span>
             </button>
           ))}
+          
+          {/* FIX: New Email Button for Desktop */}
+          <a
+            href="mailto:contact@gtmoutboundservices.com"
+            className="ml-2"
+          >
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-lg shadow-white/10 text-white border-white/50 hover:border-white"
+            >
+              <Mail className="w-4 h-4" /> 
+              <span>Email Us</span>
+            </Button>
+          </a>
 
+          {/* Existing LinkedIn Button */}
           <a
             href="https://www.linkedin.com/company/gtmoutboundservices/"
             target="_blank"
@@ -119,11 +135,26 @@ const Navbar = () => {
             </button>
           ))}
 
+          {/* FIX: New Email Button for Mobile */}
+          <a
+            href="mailto:contact@gtmoutboundservices.com"
+            className="block pt-4"
+          >
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="w-full flex items-center justify-center gap-2 text-white border-white/50 hover:border-white"
+            >
+              <Mail className="w-4 h-4" /> contact@gtmoutboundservices.com
+            </Button>
+          </a>
+          
+          {/* Existing LinkedIn Button (Removed redundant pt-4 class to rely on space-y-2) */}
           <a
             href="https://www.linkedin.com/company/gtmoutboundservices/"
             target="_blank"
             rel="noopener noreferrer"
-            className="block pt-4"
+            className="block"
           >
             <Button 
               variant="intelligence" 
