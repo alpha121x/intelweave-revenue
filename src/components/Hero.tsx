@@ -116,7 +116,7 @@ const Hero = () => {
         }}
       />
 
-      {/* FIX 1: Added pt-32/sm:pt-40 to account for fixed Navbar height */}
+      {/* FIX: Added pt-32/sm:pt-40 to account for fixed Navbar height */}
       <div className="container relative z-30 mx-auto px-6 py-16 pt-32 sm:py-20 sm:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -220,7 +220,6 @@ const Hero = () => {
           </motion.p>
 
           {/* CTA buttons with enhanced animations and glow effects */}
-          {/* CTA buttons with enhanced animations and glow effects */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -245,8 +244,8 @@ const Hero = () => {
               transition={{
                 boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
               }}
-              // FIX 2: Removed 'rounded-full' class. Adjusted width.
-              className="w-full sm:w-auto"
+              // Ensures full width on mobile/small tablets
+              className="rounded-full w-full md:w-auto"
             >
               <Button
                 variant="surgical"
@@ -277,8 +276,8 @@ const Hero = () => {
             <motion.div
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              // FIX 2: Removed 'rounded-full' class. Adjusted width.
-              className="w-full sm:w-auto"
+              // Ensures full width on mobile/small tablets
+              className="w-full md:w-auto"
             >
               <a
                 href="https://www.linkedin.com/company/gtmoutboundservices/"
@@ -310,6 +309,7 @@ const Hero = () => {
               </a>
             </motion.div>
           </motion.div>
+          
           {/* Trust indicators with enhanced staggered animations and pulse effects */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
