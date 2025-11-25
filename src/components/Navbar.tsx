@@ -39,10 +39,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${
+    <header className={`fixed w-full z-[100] transition-all duration-500 pointer-events-auto ${
       scrolled 
         ? 'bg-navy-deep/95 backdrop-blur-xl border-b border-primary/20 shadow-lg shadow-primary/5' 
-        : 'bg-transparent'
+        : 'bg-navy-deep/80 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo with image and full name */}
