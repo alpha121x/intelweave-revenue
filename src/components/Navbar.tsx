@@ -19,7 +19,7 @@ const Navbar = () => {
     { label: "Solution", id: "solution" },
     { label: "Why Us", id: "why" },
     { label: "Systems", id: "proprietary-systems" },
-    { label: "ROI", id: "value-roi" },
+    { label: "Value&ROI", id: "value-roi" },
     { label: "Investment", id: "investment" },
   ];
 
