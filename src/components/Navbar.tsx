@@ -103,15 +103,15 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden absolute top-full left-0 w-full bg-navy-deep/98 backdrop-blur-xl border-t border-primary/20 shadow-2xl transition-all duration-500 ${
+      <div className={`lg:hidden absolute top-full left-0 w-full bg-navy-deep backdrop-blur-xl border-t border-primary/30 shadow-2xl transition-all duration-500 ${
         isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
       }`}>
-        <div className="container mx-auto px-6 py-6 space-y-4">
+        <div className="container mx-auto px-6 py-6 space-y-2">
           {sections.map((section, index) => (
             <button
               key={section.id}
               onClick={() => scrollToSection(section.id)}
-              className="block w-full text-left text-steel hover:text-white hover:translate-x-2 transition-all duration-300 py-2 px-4 rounded-lg hover:bg-primary/5"
+              className="block w-full text-left text-white hover:text-primary hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-primary/10 font-medium"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
               {section.label}
