@@ -1,10 +1,20 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
-import { LinkedinIcon, Mail, Phone, Facebook, Instagram, Twitter } from "lucide-react";
+import {
+  LinkedinIcon,
+  Mail,
+  Phone,
+  Facebook,
+  Instagram,
+  Twitter,
+} from "lucide-react";
 
 const Footer: FC = () => {
   return (
-    <footer className="relative py-12 bg-navy-deep border-t border-border" id="contact">
+    <footer
+      className="relative py-12 bg-navy-deep border-t border-border"
+      id="contact"
+    >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -25,7 +35,9 @@ const Footer: FC = () => {
                 GTM Outbound Services
               </h3>
               <p className="text-sm sm:text-base text-steel leading-relaxed">
-                Revenue systems engineering led by a Chartered Accountant with global experience – bringing forensic commercial insight to every project.
+                Revenue systems engineering led by a Chartered Accountant with
+                global experience – bringing forensic commercial insight to
+                every project.
               </p>
             </div>
 
@@ -33,7 +45,12 @@ const Footer: FC = () => {
             <div>
               <h4 className="text-lg font-bold mb-4">Services</h4>
               <ul className="space-y-2">
-                {["Revenue Diagnostic", "Pilot Engagement", "Full Revenue System", "Market Intelligence"].map((service, i) => (
+                {[
+                  "Revenue Diagnostic",
+                  "Pilot Engagement",
+                  "Full Revenue System",
+                  "Market Intelligence",
+                ].map((service, i) => (
                   <li key={i}>
                     <a
                       href="#"
@@ -50,7 +67,12 @@ const Footer: FC = () => {
             <div>
               <h4 className="text-lg font-bold mb-4">Industries</h4>
               <ul className="space-y-2">
-                {["Professional Services", "RegTech & Compliance", "FinTech SaaS", "PE/VC-Backed"].map((industry, i) => (
+                {[
+                  "Professional Services",
+                  "RegTech & Compliance",
+                  "FinTech SaaS",
+                  "PE/VC-Backed",
+                ].map((industry, i) => (
                   <li key={i}>
                     <a
                       href="#"
@@ -98,74 +120,74 @@ const Footer: FC = () => {
             </div>
           </motion.div>
 
-         {/* Bottom bar */}
-<div className="pt-8 border-t border-border">
-  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-    <p className="text-sm text-muted-foreground text-center sm:text-left">
-      © {new Date().getFullYear()} GTM Outbound Services. All rights reserved.
-    </p>
+          {/* Bottom bar */}
+          <div className="pt-8 border-t border-border">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+              <p className="text-sm text-muted-foreground text-center sm:text-left">
+                © {new Date().getFullYear()} GTM Outbound Services. All rights
+                reserved.
+              </p>
 
-    {/* --- Social Icons (Inserted Here) --- */}
-    <div className="flex items-center gap-4">
-      <a
-        href="https://www.linkedin.com/company/gtmoutboundservices/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-steel hover:text-primary transition-all hover:scale-110"
-        aria-label="LinkedIn"
-      >
-        <LinkedinIcon className="w-5 h-5" />
-      </a>
+              {/* --- Social Icons (Inserted Here) --- */}
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://www.linkedin.com/company/gtmoutboundservices/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-steel hover:text-primary transition-all hover:scale-110"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon className="w-5 h-5" />
+                </a>
 
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-steel hover:text-primary transition-all hover:scale-110"
-        aria-label="Twitter"
-      >
-        <Twitter className="w-5 h-5" />
-      </a>
+                <a
+                  href="#"
+                  target="https://x.com/GTMOutbound"
+                  rel="noopener noreferrer"
+                  className="text-steel hover:text-primary transition-all hover:scale-110"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="w-5 h-5" />
+                </a>
 
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-steel hover:text-primary transition-all hover:scale-110"
-        aria-label="Facebook"
-      >
-        <Facebook className="w-5 h-5" />
-      </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-steel hover:text-primary transition-all hover:scale-110"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
 
-      <a
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-steel hover:text-primary transition-all hover:scale-110"
-        aria-label="Instagram"
-      >
-        <Instagram className="w-5 h-5" />
-      </a>
-    </div>
-    {/* ------------------------------- */}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-steel hover:text-primary transition-all hover:scale-110"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+              </div>
+              {/* ------------------------------- */}
 
-    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-      <a
-        href="#"
-        className="text-sm text-muted-foreground hover:text-primary transition-colors"
-      >
-        Privacy Policy
-      </a>
-      <a
-        href="#"
-        className="text-sm text-muted-foreground hover:text-primary transition-colors"
-      >
-        Terms of Service
-      </a>
-    </div>
-  </div>
-</div>
-
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                <a
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Terms of Service
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
