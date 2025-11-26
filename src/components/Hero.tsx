@@ -421,7 +421,7 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.6, duration: 0.6 }}
-                  className="h-10 sm:h-12 w-auto transition-all duration-500"
+                  className="h-10 sm:h-12 w-auto transition-all duration-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]"
                 />
 
                 {/* Logo Item (HubSpot) - Now in full color/opacity */}
