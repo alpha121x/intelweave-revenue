@@ -2,7 +2,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, LinkedinIcon, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
-import { BookingDialog } from "@/components/BookingDialog";
+import  BookingDialog  from "@/components/BookingDialog";
 
 const Hero = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -420,8 +420,7 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.6, duration: 0.6 }}
-                  className="h-10 sm:h-12 w-auto transition-all duration-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]"
-
+                  className="h-10 sm:h-12 w-auto transition-all duration-500"
                 />
 
                 {/* Logo Item (HubSpot) - Now in full color/opacity */}
