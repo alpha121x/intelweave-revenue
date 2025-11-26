@@ -17,7 +17,7 @@ const Footer: FC = () => {
             {/* Company info */}
             <div className="flex flex-col items-start sm:items-start">
               <img
-                src="/logoo.png"
+                src="/gtm_logo_2.jpg"
                 alt="GTM Outbound Services Logo"
                 className="h-24 sm:h-32 md:h-36 lg:h-40 object-contain mb-4 sm:mb-6"
               />
