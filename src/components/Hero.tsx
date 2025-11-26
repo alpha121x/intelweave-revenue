@@ -431,14 +431,14 @@ const Hero = () => {
                 />
 
                 {/* Logo Item (UK Government) - Now in full color/opacity */}
-                <motion.img
+                {/* <motion.img
                   src="/logos/uk-logo.png"
                   alt="UK Government"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.8, duration: 0.6 }}
                   className="h-10 sm:h-12 w-auto transition-all duration-500"
-                />
+                /> */}
               </div>
             </motion.div>
           </div>
