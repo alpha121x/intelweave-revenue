@@ -51,11 +51,12 @@ const Navbar = () => {
           className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform duration-300 group"
           onClick={() => scrollToSection("hero")}
         >
-          <img 
-            src="/gtm_logo.jpg" 
-            alt="GTM Outbound Services" 
-            className="w-10 h-10 rounded-full object-contain group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow duration-300"
-          />
+         <img
+  src="/gtm_logo.jpg"
+  alt="GTM Outbound Services"
+  className="w-14 h-14 rounded-full object-contain group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow duration-300"
+/>
+
           <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-white to-primary bg-clip-text text-transparent">
             GTM Outbound Services
           </span>
