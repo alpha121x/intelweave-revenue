@@ -1,9 +1,11 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, LinkedinIcon, Sparkles } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { BookingDialog } from "@/components/BookingDialog";
 
 const Hero = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -251,6 +253,7 @@ const Hero = () => {
               <Button
                 variant="surgical"
                 size="xl"
+                onClick={() => setIsBookingOpen(true)}
                 // Mobile style classes for size and padding
                 className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
               >
@@ -445,6 +448,9 @@ const Hero = () => {
           {/* ------------------------------------------- */}
         </motion.div>
       </div>
+
+      {/* Booking Dialog */}
+      <BookingDialog open={isBookingOpen} onOpenChange={setIsBookingOpen} />
     </section>
   );
 };
