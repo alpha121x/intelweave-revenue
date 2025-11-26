@@ -14,9 +14,23 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle2, Clock } from "lucide-react";
 
 const TIME_SLOTS = [
-  "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-  "12:00", "12:30", "13:00", "13:30", "14:00", "14:30",
-  "15:00", "15:30", "16:00", "16:30", "17:00"
+  "09:00",
+  "09:30",
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
+  "15:00",
+  "15:30",
+  "16:00",
+  "16:30",
+  "17:00",
 ];
 
 const WEBHOOK = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
@@ -26,7 +40,10 @@ interface BookingDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export default function BookingDialog({ open, onOpenChange }: BookingDialogProps) {
+export default function BookingDialog({
+  open,
+  onOpenChange,
+}: BookingDialogProps) {
   const [date, setDate] = useState<Date | undefined>();
   const [time, setTime] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -60,19 +77,43 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
   };
 
   const reset = () => {
-    setDate(undefined); setTime(""); setFirstName(""); setLastName("");
-    setEmail(""); setPhone(""); setSuccess(false);
+    setDate(undefined);
+    setTime("");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+    setSuccess(false);
   };
 
   return (
-    <Dialog open={open} onOpenChange={(o) => { onOpenChange(o); if (!o) reset(); }}>
-      <DialogContent className="max-w-5xl w-[96vw] max-h-[92vh] rounded-3xl bg-black border border-cyan-900/40 p-4 md:p-8 overflow-y-auto">
+    <Dialog
+      open={open}
+      onOpenChange={(o) => {
+        onOpenChange(o);
+        if (!o) reset();
+      }}
+    >
+      <DialogContent
+        className="
+    max-w-5xl 
+    w-full 
+    max-h-[92vh] 
+    rounded-3xl 
+    bg-black 
+    border border-cyan-900/40 
+    p-4 sm:p-6 md:p-8 
+    overflow-y-auto 
+    mt-20 md:mt-0
+  "
+      >
         {success ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
             <CheckCircle2 className="w-20 h-20 text-cyan-500 mb-8" />
             <h3 className="text-3xl font-bold text-white">You're Booked!</h3>
             <p className="text-lg text-gray-300 mt-4">
-              {date && format(date, "EEEE, MMM d")} at <span className="text-cyan-400 font-bold">{time}</span>
+              {date && format(date, "EEEE, MMM d")} at{" "}
+              <span className="text-cyan-400 font-bold">{time}</span>
             </p>
             <p className="text-gray-400 mt-4">Zoom link sent to {email}</p>
           </div>
@@ -86,20 +127,25 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
 
             {/* Mobile-first centric stack, Desktop: 3 columns */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-
               {/* Calendar - FULLY FIXED for mobile */}
               <div className="order-1">
-                <Label className="text-white text-lg mb-3 block">Select Date</Label>
+                <Label className="text-white text-lg mb-3 block">
+                  Select Date
+                </Label>
                 <div className="bg-zinc-900/70 backdrop-blur-sm rounded-2xl p-3 border border-zinc-800 overflow-hidden">
                   <Calendar
                     mode="single"
                     selected={date}
                     onSelect={setDate}
-                    disabled={(d) => d < new Date() || d.getDay() === 0 || d.getDay() === 6}
+                    disabled={(d) =>
+                      d < new Date() || d.getDay() === 0 || d.getDay() === 6
+                    }
                     className="w-full [&_*]:!text-sm [&_*]:!text-white"
                     classNames={{
-                      day_selected: "bg-cyan-500 text-black font-bold !rounded-lg",
-                      day_today: "text-cyan-400 font-bold ring-2 ring-cyan-500/50",
+                      day_selected:
+                        "bg-cyan-500 text-black font-bold !rounded-lg",
+                      day_today:
+                        "text-cyan-400 font-bold ring-2 ring-cyan-500/50",
                       day: "hover:bg-zinc-800 !w-9 !h-9",
                       caption: "text-white font-semibold text-base",
                       nav_button: "text-cyan-400 hover:bg-zinc-800 h-8 w-8",
@@ -181,7 +227,9 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
                 </div>
 
                 <div>
-                  <Label className="text-white text-sm">Phone <span className="text-gray-500">(optional)</span></Label>
+                  <Label className="text-white text-sm">
+                    Phone <span className="text-gray-500">(optional)</span>
+                  </Label>
                   <Input
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
