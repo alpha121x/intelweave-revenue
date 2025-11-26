@@ -19,7 +19,7 @@ const Footer: FC = () => {
               <img
                 src="/gtm_logo_2.jpg"
                 alt="GTM Outbound Services Logo"
-                className="h-24 sm:h-32 md:h-36 lg:h-40 object-contain mb-4 sm:mb-6"
+                className="h-16 sm:h-20 md:h-24 w-16 sm:w-20 md:w-24 object-contain mb-4 sm:mb-6"
               />
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">
                 GTM Outbound Services
