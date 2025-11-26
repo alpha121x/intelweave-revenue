@@ -52,7 +52,7 @@ const Navbar = () => {
           onClick={() => scrollToSection("hero")}
         >
           <img 
-            src="/logoo.png" 
+            src="/gtm_logo.jpg" 
             alt="GTM Outbound Services" 
             className="w-10 h-10 rounded-full object-contain group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow duration-300"
           />
