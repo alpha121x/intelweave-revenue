@@ -66,68 +66,78 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
 
   return (
     <Dialog open={open} onOpenChange={(o) => { onOpenChange(o); if (!o) reset(); }}>
-      <DialogContent className="max-w-5xl w-[95vw] max-h-[96vh] rounded-3xl bg-black border border-cyan-900/40 p-6 md:p-8 overflow-y-auto">
+      <DialogContent className="max-w-5xl w-[96vw] max-h-[92vh] rounded-3xl bg-black border border-cyan-900/40 p-4 md:p-8 overflow-y-auto">
         {success ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <CheckCircle2 className="w-24 h-24 text-cyan-500 mb-8" />
-            <h3 className="text-4xl font-bold text-white">You're Booked!</h3>
-            <p className="text-xl text-gray-300 mt-4">
+            <CheckCircle2 className="w-20 h-20 text-cyan-500 mb-8" />
+            <h3 className="text-3xl font-bold text-white">You're Booked!</h3>
+            <p className="text-lg text-gray-300 mt-4">
               {date && format(date, "EEEE, MMM d")} at <span className="text-cyan-400 font-bold">{time}</span>
             </p>
             <p className="text-gray-400 mt-4">Zoom link sent to {email}</p>
           </div>
         ) : (
           <>
-            <DialogHeader className="text-center mb-8">
-              <DialogTitle className="text-4xl md:text-5xl font-bold text-white">
+            <DialogHeader className="text-center mb-6 md:mb-8">
+              <DialogTitle className="text-3xl md:text-5xl font-bold text-white">
                 Book Your Free 15-Min Call
               </DialogTitle>
             </DialogHeader>
 
-            {/* Mobile-first responsive grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
-              {/* Calendar - Full width on mobile, fixed width on desktop */}
-              <div className="lg:col-span-4">
-                <Label className="text-white text-lg mb-4 block">Select Date</Label>
-                <div className="bg-zinc-900/50 rounded-2xl p-4 border border-zinc-800">
+            {/* Mobile-first centric stack, Desktop: 3 columns */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+
+              {/* Calendar - FULLY FIXED for mobile */}
+              <div className="order-1">
+                <Label className="text-white text-lg mb-3 block">Select Date</Label>
+                <div className="bg-zinc-900/70 backdrop-blur-sm rounded-2xl p-3 border border-zinc-800 overflow-hidden">
                   <Calendar
                     mode="single"
                     selected={date}
                     onSelect={setDate}
                     disabled={(d) => d < new Date() || d.getDay() === 0 || d.getDay() === 6}
-                    className="w-full"
+                    className="w-full [&_*]:!text-sm [&_*]:!text-white"
                     classNames={{
-                      day_selected: "bg-cyan-500 text-black font-bold",
+                      day_selected: "bg-cyan-500 text-black font-bold !rounded-lg",
                       day_today: "text-cyan-400 font-bold ring-2 ring-cyan-500/50",
-                      day: "text-white hover:bg-zinc-800",
-                      caption: "text-white font-semibold",
-                      nav_button: "text-cyan-400 hover:bg-zinc-800",
+                      day: "hover:bg-zinc-800 !w-9 !h-9",
+                      caption: "text-white font-semibold text-base",
+                      nav_button: "text-cyan-400 hover:bg-zinc-800 h-8 w-8",
+                      table: "w-full",
+                      head_cell: "text-gray-400 text-xs",
+                    }}
+                    components={{
+                      DayContent: ({ date }) => (
+                        <div className="w-full h-full flex items-center justify-center">
+                          {date.getDate()}
+                        </div>
+                      ),
                     }}
                   />
                 </div>
                 {date && (
-                  <p className="text-center text-cyan-400 font-medium mt-3">
+                  <p className="text-center text-cyan-400 font-medium mt-3 text-sm md:text-base">
                     {format(date, "EEEE, MMMM d")}
                   </p>
                 )}
               </div>
 
               {/* Time Slots */}
-              <div className="lg:col-span-4">
-                <Label className="text-white text-lg mb-4 flex items-center gap-2">
+              <div className="order-2 lg:order-2">
+                <Label className="text-white text-lg mb-3 flex items-center gap-2">
                   <Clock className="w-5 h-5" /> Select Time (GMT)
                 </Label>
-                <div className="grid grid-cols-3 gap-3 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-900">
+                <div className="grid grid-cols-3 gap-2.5 max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-900 pr-2">
                   {TIME_SLOTS.map((slot) => (
                     <Button
                       key={slot}
                       variant={time === slot ? "default" : "outline"}
                       size="sm"
                       onClick={() => setTime(slot)}
-                      className={`h-11 text-sm font-medium transition-all ${
+                      className={`h-10 text-xs md:text-sm font-medium transition-all ${
                         time === slot
                           ? "bg-cyan-500 hover:bg-cyan-400 text-black shadow-lg shadow-cyan-500/30"
-                          : "border-zinc-700 hover:border-cyan-500"
+                          : "border-zinc-700 hover:border-cyan-500 text-gray-300"
                       }`}
                     >
                       {slot}
@@ -137,53 +147,53 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
               </div>
 
               {/* Form */}
-              <div className="lg:col-span-4 space-y-5">
-                <div className="grid grid-cols-2 gap-4">
+              <div className="order-3 lg:order-3 space-y-4">
+                <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <Label className="text-white">First Name *</Label>
+                    <Label className="text-white text-sm">First Name *</Label>
                     <Input
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       placeholder="John"
-                      className="mt-2 h-12 bg-zinc-900/50 border-zinc-700 text-white placeholder:text-gray-500"
+                      className="mt-1.5 h-11 text-sm bg-zinc-900/50 border-zinc-700 text-white"
                     />
                   </div>
                   <div>
-                    <Label className="text-white">Last Name *</Label>
+                    <Label className="text-white text-sm">Last Name *</Label>
                     <Input
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       placeholder="Doe"
-                      className="mt-2 h-12 bg-zinc-900/50 border-zinc-700 text-white placeholder:text-gray-500"
+                      className="mt-1.5 h-11 text-sm bg-zinc-900/50 border-zinc-700 text-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <Label className="text-white">Work Email *</Label>
+                  <Label className="text-white text-sm">Work Email *</Label>
                   <Input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@company.com"
-                    className="mt-2 h-12 bg-zinc-900/50 border-zinc-700 text-white"
+                    className="mt-1.5 h-11 text-sm bg-zinc-900/50 border-zinc-700 text-white"
                   />
                 </div>
 
                 <div>
-                  <Label className="text-white">Phone <span className="text-gray-500">(optional)</span></Label>
+                  <Label className="text-white text-sm">Phone <span className="text-gray-500">(optional)</span></Label>
                   <Input
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+44 7911 123456"
-                    className="mt-2 h-12 bg-zinc-900/50 border-zinc-700 text-white"
+                    className="mt-1.5 h-11 text-sm bg-zinc-900/50 border-zinc-700 text-white"
                   />
                 </div>
 
                 <Button
                   onClick={submit}
                   disabled={!isValid}
-                  className="w-full h-14 text-lg font-bold bg-cyan-500 hover:bg-cyan-400 text-black disabled:opacity-50 shadow-lg shadow-cyan-500/40"
+                  className="w-full h-12 text-base font-bold bg-cyan-500 hover:bg-cyan-400 text-black disabled:opacity-50 shadow-lg shadow-cyan-500/40"
                 >
                   Confirm Booking
                 </Button>
