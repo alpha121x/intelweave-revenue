@@ -141,7 +141,7 @@ const Footer: FC = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://x.com/GTMOutbound"
                   target="https://x.com/GTMOutbound"
                   rel="noopener noreferrer"
                   className="text-steel hover:text-primary transition-all hover:scale-110"
