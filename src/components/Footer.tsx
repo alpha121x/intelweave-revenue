@@ -98,68 +98,74 @@ const Footer: FC = () => {
             </div>
           </motion.div>
 
-          {/* Bottom bar */}
-          <div className="pt-8 border-t border-border">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
-              <p className="text-sm text-muted-foreground text-center sm:text-left">
-                © {new Date().getFullYear()} GTM Outbound Services. All rights reserved.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                <a
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Privacy Policy
-                </a>
-                <a
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Terms of Service
-                </a>
-              </div>
-            </div>
+         {/* Bottom bar */}
+<div className="pt-8 border-t border-border">
+  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
+    <p className="text-sm text-muted-foreground text-center sm:text-left">
+      © {new Date().getFullYear()} GTM Outbound Services. All rights reserved.
+    </p>
 
-            {/* Social Media Links */}
-            <div className="flex items-center justify-center gap-6">
-              <a
-                href="https://www.linkedin.com/company/gtmoutboundservices/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-steel hover:text-primary transition-all hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-steel hover:text-primary transition-all hover:scale-110"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-steel hover:text-primary transition-all hover:scale-110"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-steel hover:text-primary transition-all hover:scale-110"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+    {/* --- Social Icons (Inserted Here) --- */}
+    <div className="flex items-center gap-4">
+      <a
+        href="https://www.linkedin.com/company/gtmoutboundservices/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-steel hover:text-primary transition-all hover:scale-110"
+        aria-label="LinkedIn"
+      >
+        <LinkedinIcon className="w-5 h-5" />
+      </a>
+
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-steel hover:text-primary transition-all hover:scale-110"
+        aria-label="Twitter"
+      >
+        <Twitter className="w-5 h-5" />
+      </a>
+
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-steel hover:text-primary transition-all hover:scale-110"
+        aria-label="Facebook"
+      >
+        <Facebook className="w-5 h-5" />
+      </a>
+
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-steel hover:text-primary transition-all hover:scale-110"
+        aria-label="Instagram"
+      >
+        <Instagram className="w-5 h-5" />
+      </a>
+    </div>
+    {/* ------------------------------- */}
+
+    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+      <a
+        href="#"
+        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+      >
+        Privacy Policy
+      </a>
+      <a
+        href="#"
+        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+      >
+        Terms of Service
+      </a>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </footer>
