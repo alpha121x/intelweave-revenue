@@ -313,13 +313,14 @@ const Hero = () => {
               </a>
             </motion.div>
           </motion.div>
+          
           {/* Trust indicators with enhanced staggered animations and pulse effects */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2, duration: 0.8 }}
-            // UPDATED: mt-10 for mobile, reduced gap for mobile
-            className="mt-10 sm:mt-16 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 sm:gap-6 md:gap-8 text-sm text-muted-foreground"
+            // FIX: Added flex-col items-start for mobile alignment and max-width/mx-auto to center the block on mobile
+            className="mt-10 sm:mt-16 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-3 md:gap-8 text-sm text-muted-foreground max-w-sm mx-auto sm:max-w-none sm:mx-0"
           >
             {[
               "Led by Chartered Accountant",
