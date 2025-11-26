@@ -57,7 +57,7 @@ const Navbar = () => {
           <img
             src="/gtm_logo.jpg"
             alt="GTM Outbound Services"
-            className="w-16 h-12 rounded-full object-contain group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow duration-300"
+            className="w-16 h-14 rounded-full object-contain group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow duration-300"
           />
 
           <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-white to-primary bg-clip-text text-transparent">
