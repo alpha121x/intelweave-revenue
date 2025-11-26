@@ -116,8 +116,8 @@ const Hero = () => {
         }}
       />
 
-      {/* UPDATED: Reduced padding for mobile (py-16) */}
-      <div className="container relative z-30 mx-auto px-6 py-16 sm:py-20">
+      {/* FIX 1: Added pt-32/sm:pt-40 to account for fixed Navbar height */}
+      <div className="container relative z-30 mx-auto px-6 py-16 pt-32 sm:py-20 sm:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -245,8 +245,8 @@ const Hero = () => {
               transition={{
                 boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
               }}
-              // Ensures full width on mobile/small tablets
-              className="rounded-full w-full md:w-auto"
+              // FIX 2: Removed 'rounded-full' class. Adjusted width.
+              className="w-full sm:w-auto"
             >
               <Button
                 variant="surgical"
@@ -277,8 +277,8 @@ const Hero = () => {
             <motion.div
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              // Ensures full width on mobile/small tablets
-              className="w-full md:w-auto"
+              // FIX 2: Removed 'rounded-full' class. Adjusted width.
+              className="w-full sm:w-auto"
             >
               <a
                 href="https://www.linkedin.com/company/gtmoutboundservices/"
@@ -315,8 +315,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2, duration: 0.8 }}
-            // FIX: Added flex-col items-start for mobile alignment and max-width/mx-auto to center the block on mobile
-            className="mt-10 sm:mt-16 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-3 md:gap-8 text-sm text-muted-foreground max-w-sm mx-auto sm:max-w-none sm:mx-0"
+            // UPDATED: mt-10 for mobile, reduced gap for mobile
+            className="mt-10 sm:mt-16 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 sm:gap-6 md:gap-8 text-sm text-muted-foreground"
           >
             {[
               "Led by Chartered Accountant",
