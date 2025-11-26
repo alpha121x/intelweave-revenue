@@ -14,9 +14,23 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle2, Clock, X } from "lucide-react";
 
 const TIME_SLOTS = [
-  "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-  "12:00", "12:30", "13:00", "13:30", "14:00", "14:30",
-  "15:00", "15:30", "16:00", "16:30", "17:00"
+  "09:00",
+  "09:30",
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
+  "15:00",
+  "15:30",
+  "16:00",
+  "16:30",
+  "17:00",
 ];
 
 const WEBHOOK = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
@@ -26,7 +40,10 @@ interface BookingDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export default function BookingDialog({ open, onOpenChange }: BookingDialogProps) {
+export default function BookingDialog({
+  open,
+  onOpenChange,
+}: BookingDialogProps) {
   const [date, setDate] = useState<Date | undefined>();
   const [time, setTime] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -60,15 +77,24 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
   };
 
   const reset = () => {
-    setDate(undefined); setTime(""); setFirstName(""); setLastName("");
-    setEmail(""); setPhone(""); setSuccess(false);
+    setDate(undefined);
+    setTime("");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+    setSuccess(false);
   };
 
   return (
-    <Dialog open={open} onOpenChange={(o) => { onOpenChange(o); if (!o) reset(); }}>
-      <DialogContent
-        className="max-w-5xl w-[95vw] max-h-[96vh] rounded-3xl bg-black border border-cyan-900/40 p-6 md:p-8 overflow-hidden flex flex-col"
-      >
+    <Dialog
+      open={open}
+      onOpenChange={(o) => {
+        onOpenChange(o);
+        if (!o) reset();
+      }}
+    >
+      <DialogContent className="max-w-5xl w-[95vw] max-h-[96vh] rounded-3xl bg-black border border-cyan-900/40 p-6 md:p-8 overflow-hidden flex flex-col">
         {/* Close Button */}
         <button
           onClick={() => onOpenChange(false)}
@@ -82,13 +108,14 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
             <CheckCircle2 className="w-24 h-24 text-cyan-500 mb-8" />
             <h3 className="text-4xl font-bold text-white">You're Booked!</h3>
             <p className="text-xl text-gray-300 mt-4">
-              {date && format(date, "EEEE, MMM d")} at <span className="text-cyan-400 font-bold">{time}</span>
+              {date && format(date, "EEEE, MMM d")} at{" "}
+              <span className="text-cyan-400 font-bold">{time}</span>
             </p>
             <p className="text-gray-400 mt-4">Zoom link sent to {email}</p>
           </div>
         ) : (
           <>
-            <DialogHeader className="text-center mb-8 relative z-10">
+            <DialogHeader className="text-center mb-8 relative z-10 pt-16 md:pt-0">
               <DialogTitle className="text-4xl md:text-5xl font-bold text-white">
                 Book Your Free 15-Min Call
               </DialogTitle>
@@ -99,17 +126,22 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
                 {/* Calendar */}
                 <div className="lg:col-span-4">
-                  <Label className="text-white text-lg mb-4 block">Select Date</Label>
+                  <Label className="text-white text-lg mb-4 block">
+                    Select Date
+                  </Label>
                   <div className="bg-zinc-900/50 rounded-2xl p-4 border border-zinc-800">
                     <Calendar
                       mode="single"
                       selected={date}
                       onSelect={setDate}
-                      disabled={(d) => d < new Date() || d.getDay() === 0 || d.getDay() === 6}
+                      disabled={(d) =>
+                        d < new Date() || d.getDay() === 0 || d.getDay() === 6
+                      }
                       className="w-full"
                       classNames={{
                         day_selected: "bg-cyan-500 text-black font-bold",
-                        day_today: "text-cyan-400 font-bold ring-2 ring-cyan-500/50",
+                        day_today:
+                          "text-cyan-400 font-bold ring-2 ring-cyan-500/50",
                         day: "text-white hover:bg-zinc-800",
                         caption: "text-white font-semibold",
                         nav_button: "text-cyan-400 hover:bg-zinc-800",
@@ -182,7 +214,9 @@ export default function BookingDialog({ open, onOpenChange }: BookingDialogProps
                   </div>
 
                   <div>
-                    <Label className="text-white">Phone <span className="text-gray-500">(optional)</span></Label>
+                    <Label className="text-white">
+                      Phone <span className="text-gray-500">(optional)</span>
+                    </Label>
                     <Input
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
