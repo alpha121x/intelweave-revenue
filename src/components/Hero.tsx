@@ -4,6 +4,9 @@ import { ArrowRight, LinkedinIcon, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import  BookingDialog  from "@/components/BookingDialog";
 
+
+
+
 const Hero = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const mouseX = useMotionValue(0);
