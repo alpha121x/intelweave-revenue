@@ -3,10 +3,30 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, LinkedinIcon, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 
-
 const Hero = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+
+  // --- Calendly Script Loader (Added) ---
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  // --------------------------------------
+
+  const openCalendly = () => {
+    // --- Calendly Popup Trigger (Added) ---
+    //@ts-ignore
+    Calendly.initPopupWidget({
+      url: "https://calendly.com/your-calendly-link-here",
+    });
+  };
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -47,7 +67,7 @@ const Hero = () => {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Multiple floating orbs (HIDDEN ON SMALL SCREENS) */}
+      {/* Multiple floating orbs */}
       <motion.div
         className="absolute top-20 left-10 w-[400px] h-[400px] bg-primary/20 blur-[100px] rounded-full hidden sm:block"
         animate={{
@@ -87,7 +107,7 @@ const Hero = () => {
         }}
       />
 
-      {/* Spotlight effect following cursor (HIDDEN ON SMALL SCREENS) */}
+      {/* Spotlight effect */}
       <motion.div
         className="absolute w-[600px] h-[600px] pointer-events-none hidden sm:block"
         style={{
@@ -100,7 +120,7 @@ const Hero = () => {
         }}
       />
 
-      {/* Geometric accent lines (HIDDEN ON SMALL SCREENS) */}
+      {/* Accent lines */}
       <motion.div
         className="absolute top-40 right-0 w-px h-64 bg-gradient-to-b from-transparent via-primary/30 to-transparent hidden sm:block"
         animate={{ opacity: [0.2, 0.6, 0.2], scaleY: [0.8, 1, 0.8] }}
@@ -117,7 +137,7 @@ const Hero = () => {
         }}
       />
 
-      {/* FIX: Added pt-32/sm:pt-40 to account for fixed Navbar height */}
+      {/* FIX: Added pt-32/sm:pt-40 */}
       <div className="container relative z-30 mx-auto px-6 py-16 pt-32 sm:py-20 sm:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -125,8 +145,7 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-5xl mx-auto text-center"
         >
-
-          {/* Main headline with dramatic staggered animation and 3D effects */}
+          {/* Main headline */}
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -172,7 +191,11 @@ const Hero = () => {
             >
               <motion.span
                 animate={{
-                  backgroundPosition: ["0% center", "200% center", "0% center"],
+                  backgroundPosition: [
+                    "0% center",
+                    "200% center",
+                    "0% center",
+                  ],
                 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 style={{
@@ -188,7 +211,8 @@ const Hero = () => {
                 Predictable Enterprise Pipeline
               </motion.span>
             </motion.span>
-            {/* Accent line decoration */}
+
+            {/* Accent line */}
             <motion.div
               className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"
               initial={{ scaleX: 0, opacity: 0 }}
@@ -197,7 +221,7 @@ const Hero = () => {
             />
           </motion.h1>
 
-          {/* Subheadline with fade-in (UPDATED: Smaller base font size) */}
+          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -210,7 +234,7 @@ const Hero = () => {
             scalably.
           </motion.p>
 
-          {/* Proof points with enhanced animation */}
+          {/* Proof points */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -220,7 +244,7 @@ const Hero = () => {
             No bought lists. No spray-and-pray. No hope marketing.
           </motion.p>
 
-          {/* CTA buttons with enhanced animations and glow effects */}
+          {/* CTA buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -231,7 +255,7 @@ const Hero = () => {
             }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10"
           >
-            {/* FIRST BUTTON (Book a 15-Minute Intelligence Audit) */}
+            {/* FIRST BUTTON — Calendly Popup Trigger */}
             <motion.div
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.97 }}
@@ -245,14 +269,12 @@ const Hero = () => {
               transition={{
                 boxShadow: { duration: 3, repeat: Infinity, ease: "easeInOut" },
               }}
-              // Ensures full width on mobile/small tablets
               className="rounded-full w-full md:w-auto"
             >
               <Button
                 variant="surgical"
                 size="xl"
-                onClick={() => {}}
-                // Mobile style classes for size and padding
+                onClick={openCalendly}   // <-- ONLY CHANGE INSIDE BUTTON
                 className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
               >
                 <motion.div
@@ -274,11 +296,10 @@ const Hero = () => {
               </Button>
             </motion.div>
 
-            {/* SECOND BUTTON (DM "INTEL" on LinkedIn) */}
+            {/* SECOND BUTTON */}
             <motion.div
               whileHover={{ scale: 1.08, y: -2 }}
               whileTap={{ scale: 0.97 }}
-              // Ensures full width on mobile/small tablets
               className="w-full md:w-auto"
             >
               <a
@@ -289,7 +310,6 @@ const Hero = () => {
                 <Button
                   variant="intelligence"
                   size="xl"
-                  // Mobile style classes for size and padding
                   className="group shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-primary/30 hover:border-primary/60 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
                 >
                   <motion.div
@@ -311,13 +331,12 @@ const Hero = () => {
               </a>
             </motion.div>
           </motion.div>
-          
-          {/* Trust indicators with enhanced staggered animations and pulse effects */}
+
+          {/* Trust indicators */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2, duration: 0.8 }}
-            // FIX: Added flex-col items-start for mobile alignment and max-width/mx-auto to center the block on mobile
             className="mt-10 sm:mt-16 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-6 sm:gap-y-3 md:gap-8 text-sm text-muted-foreground max-w-sm mx-auto sm:max-w-none sm:mx-0"
           >
             {[
@@ -372,7 +391,7 @@ const Hero = () => {
             ))}
           </motion.div>
 
-          {/* --- MODERN CREDIBILITY BAR (Responsive Grid/List) --- */}
+          {/* Logos */}
           <div className="mt-16 w-full">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -380,7 +399,6 @@ const Hero = () => {
               transition={{ delay: 2.2, duration: 0.8 }}
               className="max-w-4xl mx-auto"
             >
-              {/* Optional: Label for the logos */}
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -390,9 +408,7 @@ const Hero = () => {
                 As seen in/ Powered by:
               </motion.p>
 
-              {/* Logos Container - Responsive Flex/Grid */}
               <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 sm:gap-y-8 p-4 md:p-6 rounded-xl bg-secondary/30 backdrop-blur-sm border border-border/50 shadow-inner">
-                {/* Logo Item (ACCA) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/acca-logo.jpeg"
                   alt="ACCA"
@@ -402,7 +418,6 @@ const Hero = () => {
                   className="h-8 sm:h-9 w-auto transition-all duration-500"
                 />
 
-                {/* Logo Item (LinkedIn) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/linkedin-logo.png"
                   alt="LinkedIn"
@@ -412,7 +427,6 @@ const Hero = () => {
                   className="h-8 sm:h-10 w-auto transition-all duration-500"
                 />
 
-                {/* Logo Item (Clay) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/clay-logo.png"
                   alt="Clay"
@@ -422,7 +436,6 @@ const Hero = () => {
                   className="h-10 sm:h-12 w-auto transition-all duration-500 drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]"
                 />
 
-                {/* Logo Item (HubSpot) - Now in full color/opacity */}
                 <motion.img
                   src="/logos/hubspot-logo.png"
                   alt="HubSpot Certified Partner"
@@ -431,20 +444,9 @@ const Hero = () => {
                   transition={{ delay: 2.7, duration: 0.6 }}
                   className="h-8 sm:h-10 w-auto transition-all duration-500"
                 />
-
-                {/* Logo Item (UK Government) - Now in full color/opacity */}
-                {/* <motion.img
-                  src="/logos/uk-logo.png"
-                  alt="UK Government"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 2.8, duration: 0.6 }}
-                  className="h-10 sm:h-12 w-auto transition-all duration-500"
-                /> */}
               </div>
             </motion.div>
           </div>
-          {/* ------------------------------------------- */}
         </motion.div>
       </div>
     </section>
