@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, LinkedinIcon } from "lucide-react";
@@ -7,6 +7,36 @@ import { ArrowRight, LinkedinIcon } from "lucide-react";
 import ContactSection from "./ContactSection"; // Adjust the import path based on where you save ContactSection.tsx
 
 const FinalCTA: FC = () => {
+  // --- Calendly Script Loader (Added) ---
+  useEffect(() => {
+    // Calendly Script
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    // Calendly CSS ⭐ REQUIRED
+    const link = document.createElement("link");
+    link.href = "https://assets.calendly.com/assets/external/widget.css";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+
+    return () => {
+      document.body.removeChild(script);
+      document.head.removeChild(link);
+    };
+  }, []);
+
+  // --------------------------------------
+
+  const openCalendly = () => {
+    // --- Calendly Popup Trigger (Added) ---
+    //@ts-ignore
+    Calendly.initPopupWidget({
+      url: "https://calendly.com/contact-gtmoutboundservices/15-min-discussion?hide_gdpr_banner=1",
+    });
+  };
+
   return (
     <section className="relative py-20 sm:py-24 md:py-32 bg-gradient-primary overflow-hidden">
       {/* Teal accent glow */}
@@ -34,12 +64,19 @@ const FinalCTA: FC = () => {
 
           {/* Subheadline */}
           <p className="text-base sm:text-lg md:text-xl text-steel mb-8 sm:mb-12 max-w-2xl mx-auto text-balance">
-            We'll reverse-engineer one hidden gap that's quietly limiting your growth – no pitch, just data.
+            We'll reverse-engineer one hidden gap that's quietly limiting your
+            growth – no pitch, just data.
           </p>
 
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
-            <Button variant="surgical" size="xl" className="group w-full sm:w-auto">
+            {/* BUTTON MODIFIED: Added onClick={openCalendly} */}
+            <Button
+              variant="surgical"
+              size="xl"
+              onClick={openCalendly}
+              className="group w-full sm:w-auto"
+            >
               Book Audit
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -49,7 +86,11 @@ const FinalCTA: FC = () => {
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
             >
-              <Button variant="intelligence" size="xl" className="group w-full sm:w-auto flex justify-center">
+              <Button
+                variant="intelligence"
+                size="xl"
+                className="group w-full sm:w-auto flex justify-center"
+              >
                 <LinkedinIcon className="mr-2" />
                 DM "INTEL" on LinkedIn
               </Button>
