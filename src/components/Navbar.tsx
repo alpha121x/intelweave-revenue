@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X, LinkedinIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,31 +16,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const sections = [
-    { label: "Problem", id: "problem" },
-    { label: "Solution", id: "solution" },
-    { label: "Why Us", id: "why" },
-    { label: "Systems", id: "proprietary-systems" },
-    { label: "Value&ROI", id: "value-roi" },
-    { label: "Investment", id: "investment" },
-    { label: "Contact", id: "contact" },
+  const pages = [
+    { label: "About", path: "/about" },
+    { label: "Services", path: "/services" },
+    { label: "Pricing", path: "/pricing" },
+    { label: "Case Studies", path: "/case-studies" },
+    { label: "Contact", path: "/contact" },
   ];
 
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      const navbarHeight = 80; // Approximate navbar height
-      const elementPosition =
-        el.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - navbarHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      setIsOpen(false); // close mobile menu after click
-    }
-  };
 
   return (
     <header
@@ -50,9 +35,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo with image and full name */}
-        <div
+        <Link 
+          to="/" 
           className="flex items-center gap-3 cursor-pointer hover:scale-105 transition-transform duration-300 group"
-          onClick={() => scrollToSection("hero")}
         >
           <img
             src="/gtm_outbound_logo.png"
@@ -63,20 +48,24 @@ const Navbar = () => {
           <span className="text-xl md:text-2xl font-bold bg-gradient-to-r from-primary via-white to-primary bg-clip-text text-transparent">
             GTM Outbound Services
           </span>
-        </div>
+        </Link>
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center space-x-8">
-          {sections.map((section, index) => (
-            <button
-              key={section.id}
-              onClick={() => scrollToSection(section.id)}
-              className="relative text-sm font-medium text-steel hover:text-white transition-all duration-300 group"
+          {pages.map((page, index) => (
+            <Link
+              key={page.path}
+              to={page.path}
+              className={`relative text-sm font-medium transition-all duration-300 group ${
+                location.pathname === page.path ? "text-white" : "text-steel hover:text-white"
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {section.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-white group-hover:w-full transition-all duration-300"></span>
-            </button>
+              {page.label}
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-primary to-white transition-all duration-300 ${
+                location.pathname === page.path ? "w-full" : "w-0 group-hover:w-full"
+              }`}></span>
+            </Link>
           ))}
 
           <a
@@ -116,15 +105,18 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-6 py-6 space-y-2">
-          {sections.map((section, index) => (
-            <button
-              key={section.id}
-              onClick={() => scrollToSection(section.id)}
-              className="block w-full text-left text-white hover:text-primary hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-primary/10 font-medium"
+          {pages.map((page, index) => (
+            <Link
+              key={page.path}
+              to={page.path}
+              onClick={() => setIsOpen(false)}
+              className={`block w-full text-left hover:translate-x-2 transition-all duration-300 py-3 px-4 rounded-lg hover:bg-primary/10 font-medium ${
+                location.pathname === page.path ? "text-primary bg-primary/10" : "text-white hover:text-primary"
+              }`}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              {section.label}
-            </button>
+              {page.label}
+            </Link>
           ))}
 
           <a
