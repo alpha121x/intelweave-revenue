@@ -9,22 +9,31 @@ const Hero = () => {
 
   // --- Calendly Script Loader (Added) ---
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
+  // Calendly Script
+  const script = document.createElement("script");
+  script.src = "https://assets.calendly.com/assets/external/widget.js";
+  script.async = true;
+  document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  // Calendly CSS  ⭐ REQUIRED
+  const link = document.createElement("link");
+  link.href = "https://assets.calendly.com/assets/external/widget.css";
+  link.rel = "stylesheet";
+  document.head.appendChild(link);
+
+  return () => {
+    document.body.removeChild(script);
+    document.head.removeChild(link);
+  };
+}, []);
+
   // --------------------------------------
 
   const openCalendly = () => {
     // --- Calendly Popup Trigger (Added) ---
     //@ts-ignore
     Calendly.initPopupWidget({
-      url: "https://calendly.com/your-calendly-link-here",
+      url: "https://calendly.com/abbasshakor0123/30min",
     });
   };
 
@@ -191,11 +200,7 @@ const Hero = () => {
             >
               <motion.span
                 animate={{
-                  backgroundPosition: [
-                    "0% center",
-                    "200% center",
-                    "0% center",
-                  ],
+                  backgroundPosition: ["0% center", "200% center", "0% center"],
                 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                 style={{
@@ -211,7 +216,6 @@ const Hero = () => {
                 Predictable Enterprise Pipeline
               </motion.span>
             </motion.span>
-
             {/* Accent line */}
             <motion.div
               className="absolute -bottom-4 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"
@@ -274,7 +278,7 @@ const Hero = () => {
               <Button
                 variant="surgical"
                 size="xl"
-                onClick={openCalendly}   // <-- ONLY CHANGE INSIDE BUTTON
+                onClick={openCalendly}
                 className="group shadow-2xl hover:shadow-[0_0_40px_hsl(186_65%_42%/0.5)] transition-all duration-500 relative overflow-hidden text-sm py-2.5 px-5 md:text-xl md:py-4 md:px-8"
               >
                 <motion.div
