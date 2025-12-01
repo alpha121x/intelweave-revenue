@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   LinkedinIcon,
   Mail,
@@ -52,12 +53,12 @@ const Footer: FC = () => {
                   "Market Intelligence",
                 ].map((service, i) => (
                   <li key={i}>
-                    <a
-                      href="#"
+                    <Link
+                      to="/services"
                       className="text-steel hover:text-primary transition-colors"
                     >
                       {service}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -173,18 +174,18 @@ const Footer: FC = () => {
               {/* ------------------------------- */}
 
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                <a
-                  href="#"
+                <Link
+                  to="/privacy-policy"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Privacy Policy
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/terms"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Terms of Service
-                </a>
+                </Link>
               </div>
             </div>
           </div>
