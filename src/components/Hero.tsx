@@ -9,23 +9,23 @@ const Hero = () => {
 
   // --- Calendly Script Loader (Added) ---
   useEffect(() => {
-  // Calendly Script
-  const script = document.createElement("script");
-  script.src = "https://assets.calendly.com/assets/external/widget.js";
-  script.async = true;
-  document.body.appendChild(script);
+    // Calendly Script
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-  // Calendly CSS  ⭐ REQUIRED
-  const link = document.createElement("link");
-  link.href = "https://assets.calendly.com/assets/external/widget.css";
-  link.rel = "stylesheet";
-  document.head.appendChild(link);
+    // Calendly CSS  ⭐ REQUIRED
+    const link = document.createElement("link");
+    link.href = "https://assets.calendly.com/assets/external/widget.css";
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
 
-  return () => {
-    document.body.removeChild(script);
-    document.head.removeChild(link);
-  };
-}, []);
+    return () => {
+      document.body.removeChild(script);
+      document.head.removeChild(link);
+    };
+  }, []);
 
   // --------------------------------------
 
@@ -446,6 +446,24 @@ const Hero = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 2.7, duration: 0.6 }}
+                  className="h-8 sm:h-10 w-auto transition-all duration-500"
+                />
+
+                <motion.img
+                  src="/logos/instanle-logo.png"
+                  alt="Instantle"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.8, duration: 0.6 }}
+                  className="h-8 sm:h-10 w-auto transition-all duration-500"
+                />
+
+                <motion.img
+                  src="/logos/smartlead-logo.png"
+                  alt="Smartlead"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 2.9, duration: 0.6 }}
                   className="h-8 sm:h-10 w-auto transition-all duration-500"
                 />
               </div>
