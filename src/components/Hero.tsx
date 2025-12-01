@@ -24,7 +24,7 @@ const Hero = () => {
     // --- Calendly Popup Trigger (Added) ---
     //@ts-ignore
     Calendly.initPopupWidget({
-      url: "https://calendly.com/your-calendly-link-here",
+      url: "https://calendly.com/abbasshakor0123/30min",
     });
   };
 
