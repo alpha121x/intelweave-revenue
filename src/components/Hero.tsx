@@ -33,7 +33,7 @@ const Hero = () => {
     // --- Calendly Popup Trigger (Added) ---
     //@ts-ignore
     Calendly.initPopupWidget({
-      url: "https://calendly.com/abbasshakor0123/30min",
+     url: "https://calendly.com/contact-gtmoutboundservices/15-min-discussion?hide_gdpr_banner=1",
     });
   };
 

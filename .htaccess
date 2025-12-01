@@ -1,5 +1,21 @@
-Options -MultiViews
+# -----------------------------------------
+# Force HTTPS and remove www (SEO best practice)
+# -----------------------------------------
 RewriteEngine On
+
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.gtmoutboundservices\.com$ [NC]
+RewriteRule ^(.*)$ https://gtmoutboundservices.com/$1 [L,R=301]
+
+# -----------------------------------------
+# Allow direct access to sitemap.xml & robots.txt
+# -----------------------------------------
+RewriteRule ^(sitemap\.xml|robots\.txt)$ - [L]
+
+# -----------------------------------------
+# React SPA Fallback (Vite)
+# -----------------------------------------
+Options -MultiViews
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [QSA,L]
