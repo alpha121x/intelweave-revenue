@@ -450,7 +450,7 @@ const Hero = () => {
                 />
 
                 <motion.img
-                  src="/logos/instanle-logo.png"
+                  src="/logos/instanlty-logo.png"
                   alt="Instantle"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
