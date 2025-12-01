@@ -33,6 +33,9 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       return;
   }
 
+  console.log('Submitting Contact Form:', { name, email, message });
+  return;
+
   // --- START ACTUAL API CALL ---
   try {
     const response = await fetch('/api/contact', {
@@ -47,6 +50,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
     // Parse the response body as JSON
     const result = await response.json();
+
 
     if (response.ok) {
       // HTTP status 200/201 (success)
