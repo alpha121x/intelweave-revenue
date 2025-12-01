@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, LinkedinIcon } from "lucide-react";
 
+// --- NEW IMPORT ---
+import ContactSection from "./ContactSection"; // Adjust the import path based on where you save ContactSection.tsx
+
 const FinalCTA: FC = () => {
   return (
     <section className="relative py-20 sm:py-24 md:py-32 bg-gradient-primary overflow-hidden">
@@ -10,6 +13,7 @@ const FinalCTA: FC = () => {
       <div className="absolute bottom-0 left-0 w-[300px] sm:w-[450px] md:w-[600px] h-[300px] sm:h-[450px] md:h-[600px] bg-primary/15 blur-[80px] sm:blur-[100px] md:blur-[120px] rounded-full" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
+        {/* === 1. INTELLIGENCE AUDIT SECTION (Existing Content) === */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,6 +65,9 @@ const FinalCTA: FC = () => {
           {/* Accent line */}
           <div className="mt-12 sm:mt-16 w-full h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
         </motion.div>
+
+        {/* === 2. GENERAL CONTACT SECTION (New Content - Integrated Component) === */}
+        <ContactSection />
       </div>
     </section>
   );
