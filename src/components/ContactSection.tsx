@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, User, MessageSquare } from "lucide-react";
 
 // Replace with your deployed Google Apps Script Web App URL
-const GOOGLE_SHEET_API_URL = "YOUR_GOOGLE_SHEET_WEB_APP_URL";
+const GOOGLE_SHEET_API_URL = "https://script.google.com/macros/s/AKfycbwqUlqIfCML-AcFIKn-XnXND4oTZgWHjs8lrFuRHWyxxKy1LsdgKFxZjmNVQERCxe5_/exec";
 
 // --- Contact Form ---
 const ContactForm: FC = () => {
