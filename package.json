@@ -1,13 +1,6 @@
 {
   "name": "vite_react_shadcn_ts",
   "private": true,
-<<<<<<< HEAD
-"scripts": {
-  "dev": "next dev -p 3001",
-  "build": "next build",
-  "start": "next start"
-},
-=======
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -17,7 +10,6 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
->>>>>>> parent of ddad11f (feat: Next.js App Router migration for SEO/SSR)
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^3.10.0",
