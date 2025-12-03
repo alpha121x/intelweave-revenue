@@ -2,12 +2,11 @@
   "name": "gtm-outbound-nextjs",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev -p 5000",
-    "build": "next build",
-    "start": "next start -p 5000",
-    "lint": "next lint"
-  },
+"scripts": {
+  "dev": "next dev -p 3001",
+  "build": "next build",
+  "start": "next start"
+},
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
